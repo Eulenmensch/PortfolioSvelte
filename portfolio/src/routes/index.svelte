@@ -1,2 +1,34 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Hero from '$lib/hero.svelte';
+	import Profile from '$lib/profile.svelte';
+	import Projects from '$lib/projects.svelte';
+	import Spacer from '$lib/spacer.svelte';
+</script>
+
+<svelte:head>
+	<style>
+		body {
+			background: hsl(190, 12%, 10%);
+			color: whitesmoke;
+		}
+	</style>
+</svelte:head>
+
+<main>
+	<Spacer height="18rem" />
+	<Hero />
+	<Spacer height="14rem" />
+	<Profile />
+	<Spacer height="16rem" />
+	<Projects />
+	<Spacer height="100rem" />
+</main>
+
+<style>
+	main {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		width: 100vw;
+	}
+</style>
