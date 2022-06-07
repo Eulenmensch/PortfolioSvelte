@@ -2,6 +2,7 @@
 	import Hero from '$lib/hero.svelte';
 	import Profile from '$lib/profile.svelte';
 	import Projects from '$lib/projects.svelte';
+	import AdditionalWorks from '$lib/additionalWorks.svelte';
 	import Spacer from '$lib/spacer.svelte';
 </script>
 
@@ -21,7 +22,9 @@
 	<Profile />
 	<Spacer height="16rem" />
 	<Projects />
-	<Spacer height="100rem" />
+	<Spacer height="20rem" />
+	<AdditionalWorks />
+	<!-- <Spacer height="100rem" /> -->
 </main>
 
 <style>
