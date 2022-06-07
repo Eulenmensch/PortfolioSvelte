@@ -34,7 +34,7 @@
 					frameborder="0"
 					width="100%"
 					height="100%"
-					onload="this.style.display = 'inline'"
+					on:load={(e) => (e.currentTarget.style.display = 'inline')}
 				/>
 			{/if}
 		</div>
