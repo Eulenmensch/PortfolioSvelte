@@ -32,6 +32,6 @@
 		display: flex;
 		flex-flow: column;
 		align-items: center;
-		width: 100vw;
+		max-width: 100%;
 	}
 </style>

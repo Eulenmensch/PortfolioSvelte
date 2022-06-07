@@ -13,7 +13,7 @@
 <style>
 	header {
 		display: flex;
-		width: 100vw;
+		width: 100%;
 		padding: 2.5rem 5rem 0.5rem;
 	}
 	#name {

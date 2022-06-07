@@ -22,6 +22,14 @@
 		--text-color-primary: whitesmoke;
 	}
 
+	:global(body) {
+		margin: 0;
+		padding: 0;
+		width: 100vw;
+		height: 100vh;
+		max-width: 100%;
+	}
+
 	:root {
 		font-family: 'Inter', Arial, sans-serif;
 		font-size: 10px;
