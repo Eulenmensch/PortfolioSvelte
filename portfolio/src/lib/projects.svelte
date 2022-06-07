@@ -15,7 +15,7 @@
 			externalLink: 'https://kingart-games.com/',
 			externalButtonText: 'KING Art Games',
 			backgroundImg: 'images/home/KingArtDesk.png',
-			overlayColorHSLA: '218, 50%, 7%, 90%',
+			overlayColorHSLA: '157, 30%, 7%, 90%',
 			innerText: [
 				'As an intern at KING Art Games I worked on the combat and UX design of a pre-production project in direct and frequent communication with the Game Director and Lead Designer.',
 				'This project is currently still under an NDA and will be updated when possible.'
