@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Button from './button.svelte';
 	import Spacer from './spacer.svelte';
-	import YouTube from 'svelte-youtube';
 
 	export let videoId = '',
 		title = '',
