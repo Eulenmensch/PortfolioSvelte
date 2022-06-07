@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Header from '$lib/header.svelte';
+	import Footer from '$lib/footer.svelte';
 	import '../app.css';
 </script>
 
 <Header />
 <slot />
+<Footer />
 
 <style>
 	/* Exo 700, Montserrat 800 300 , Rubik 900, Inter 100 200 300 400 500 600 700 800 900 */
