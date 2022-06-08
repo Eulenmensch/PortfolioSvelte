@@ -12,6 +12,9 @@
 
 <style>
 	header {
+		position: absolute;
+		top: 0;
+		z-index: 100;
 		display: flex;
 		width: 100%;
 		padding: 2.5rem 5rem 0.5rem;
