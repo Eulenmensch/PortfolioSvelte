@@ -10,12 +10,12 @@
 		titleWeight: '',
 		genre: '',
 		roles: '',
-		innerText: [''],
 		pageLink: '',
 		externalLink: '',
 		externalButtonText: '',
 		backgroundImg: '',
-		overlayColorHSLA: ''
+		overlayColorHSLA: '',
+		innerText: ['']
 	};
 </script>
 
