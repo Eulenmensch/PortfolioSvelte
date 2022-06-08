@@ -77,25 +77,8 @@
 	];
 </script>
 
-{#each projectData as project, i}
-	<ProjectHero
-		title={project.title}
-		videoId={project.videoId}
-		titleFont={project.titleFont}
-		titleSize={project.titleSize}
-		titleWeight={project.titleWeight}
-		genre={project.genre}
-		roles={project.roles}
-		pageLink={project.pageLink}
-		externalLink={project.externalLink}
-		externalButtonText={project.externalButtonText}
-		backgroundImg={project.backgroundImg}
-		overlayColorHSLA={project.overlayColorHSLA}
-	>
-		{#each project.innerText as paragraph}
-			<p>{paragraph}</p>
-		{/each}
-	</ProjectHero>
+{#each projectData as data, i}
+	<ProjectHero {data} />
 	<!-- don't add a spacer at the end of the projects component -->
 	{#if i < projectData.length - 1}
 		<Spacer height="7rem" />

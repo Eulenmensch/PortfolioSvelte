@@ -2,51 +2,58 @@
 	import Button from './button.svelte';
 	import Spacer from './spacer.svelte';
 
-	export let videoId = '',
-		title = '',
-		titleFont = '',
-		titleSize = '',
-		titleWeight = '',
-		genre = '',
-		roles = '',
-		pageLink = '',
-		externalLink = '',
-		externalButtonText = '',
-		backgroundImg = '',
-		overlayColorHSLA = '';
+	export let data = {
+		videoId: '',
+		title: '',
+		titleFont: '',
+		titleSize: '',
+		titleWeight: '',
+		genre: '',
+		roles: '',
+		innerText: [''],
+		pageLink: '',
+		externalLink: '',
+		externalButtonText: '',
+		backgroundImg: '',
+		overlayColorHSLA: ''
+	};
 </script>
 
-<section style="background-image: url({backgroundImg});">
+<section style="background-image: url({data.backgroundImg});">
 	<div id="video">
-		{#if videoId != ''}
+		{#if data.videoId != ''}
 			<iframe
 				width="100%"
 				height="100%"
-				src="https://www.youtube-nocookie.com/embed/{videoId}"
-				title="{title} youtube video"
+				src="https://www.youtube-nocookie.com/embed/{data.videoId}"
+				title="{data.title} youtube video"
 				frameborder="0"
 				allow="clipboard-write; encrypted-media; picture-in-picture"
 				allowfullscreen
 			/>
 		{/if}
 	</div>
-	<main style="background-color: hsl({overlayColorHSLA});">
-		<h1 style="font-family: {titleFont}; font-size:{titleSize}; font-weight: {titleWeight}">
-			{title}
+	<main style="background-color: hsl({data.overlayColorHSLA});">
+		<h1
+			style="font-family: {data.titleFont}; font-size:{data.titleSize}; font-weight: {data.titleWeight}"
+		>
+			{data.title}
 		</h1>
 		<Spacer height="0.7rem" />
-		<h2>{genre}</h2>
+		<h2>{data.genre}</h2>
 		<Spacer height="2rem" />
-		<div id="roles"><b>Roles:</b> {roles}</div>
+		<div id="roles"><b>Roles:</b> {data.roles}</div>
 		<Spacer height="2.5rem" />
 		<div id="description">
-			<slot />
+			{#each data.innerText as paragraph}
+				<p>{paragraph}</p>
+			{/each}
 		</div>
 		<Spacer height="2.5rem" />
 		<div id="buttons">
-			<Button link={pageLink}>Project Page</Button>
+			<Button link={data.pageLink}>Project Page</Button>
 			<Spacer width="1.5rem" />
-			<Button link={externalLink}>{externalButtonText}</Button>
+			<Button link={data.externalLink}>{data.externalButtonText}</Button>
 		</div>
 	</main>
 </section>
@@ -83,7 +90,7 @@
 		font-size: 1.6rem;
 		font-weight: 300;
 	}
-	#description :global(p) {
+	#description p {
 		font-size: 1.6rem;
 		font-weight: 700;
 		line-height: 150%;
