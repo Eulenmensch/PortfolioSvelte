@@ -1,6 +1,9 @@
-<script lang="ts">
+<script>
 	import Button from './button.svelte';
 	import Spacer from './spacer.svelte';
+	import { tweened } from 'svelte/motion';
+	import { quadOut } from 'svelte/easing';
+	import inView from '../inView';
 
 	export let data = {
 		videoId: '',
@@ -17,9 +20,20 @@
 		overlayColorHSLA: '',
 		innerText: ['']
 	};
+
+	const fadeIn = tweened(0, {
+		duration: 300,
+		easing: quadOut
+	});
 </script>
 
-<section style="background-image: url({data.backgroundImg});">
+<section
+	use:inView={{ threshold: 0.7 }}
+	on:enter={() => {
+		fadeIn.set(1);
+	}}
+	style="background-image: url({data.backgroundImg}); opacity: {$fadeIn}"
+>
 	<div id="video">
 		{#if data.videoId != ''}
 			<iframe

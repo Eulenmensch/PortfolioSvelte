@@ -1,7 +1,9 @@
 <script lang="ts">
 	import Spacer from './spacer.svelte';
 	import { mediaType } from '../types';
-	import { element } from 'svelte/internal';
+	import { tweened } from 'svelte/motion';
+	import { quadOut } from 'svelte/easing';
+	import inView from '../inView';
 
 	export let data = {
 		mediaFormat: mediaType.image,
@@ -15,11 +17,23 @@
 		genre: '',
 		text: ['']
 	};
+
+	const fadeIn = tweened(0, {
+		duration: 300,
+		easing: quadOut
+	});
 </script>
 
 <div
+	use:inView={{ threshold: 0.5 }}
+	on:enter={(e) => {
+		fadeIn.set(1);
+		if (e.currentTarget.querySelector('#iframe')) {
+			e.currentTarget.querySelector('#iframe').style.display = 'inline';
+		}
+	}}
 	id="project-container"
-	style="background-image:url({data.backgroundURL}); backround-position:center; background-size:cover;"
+	style="background-image:url({data.backgroundURL}); backround-position:center; background-size:cover; opacity:{$fadeIn}"
 >
 	<div style=" height:100%; background-color: {data.colorOverlay};">
 		<div id="media-container">
@@ -29,12 +43,12 @@
 				<video autoplay loop muted src={data.mediaURL} style="height: 100%;" />
 			{:else if data.mediaFormat == mediaType.iframe}
 				<iframe
+					id="iframe"
 					src={data.mediaURL}
 					title={data.mediaAlt}
 					frameborder="0"
 					width="100%"
 					height="100%"
-					on:load={(e) => (e.currentTarget.style.display = 'inline')}
 				/>
 			{/if}
 		</div>
