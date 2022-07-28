@@ -6,4 +6,6 @@
 	export let document;
 </script>
 
-<SliceZone slices={document.data.body} {components} {dev} />
+<div style:color={document.data.text_color}>
+	<SliceZone slices={document.data.body} {components} {dev} context={{ doc: document }} />
+</div>

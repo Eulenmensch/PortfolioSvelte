@@ -28,6 +28,7 @@
 		width: 100vw;
 		height: 100vh;
 		max-width: 100%;
+		color: var(--text-color-primary);
 	}
 
 	:root {
