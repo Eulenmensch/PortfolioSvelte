@@ -1,23 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import Footer from '$lib/footer.svelte';
-	import ProjectHeader from '$lib/projectHeader.svelte';
-	import ProjectOverview from '$lib/projectOverview.svelte';
-	import { projectData } from '../../stores/projectStore';
+	import { SliceZone } from '@prismicio/svelte';
+	import { dev } from '$app/env';
+	import components from '$lib/projectSlices';
 
-	const projectId = $page.params.project;
+	export let document;
 </script>
 
-<svelte:head>
-	<style>
-		body {
-			color: whitesmoke;
-		}
-	</style>
-</svelte:head>
-
-<main style="background-color: {$projectData[projectId].bodyColor};">
-	<ProjectHeader bind:data={$projectData[projectId]} />
-	<ProjectOverview bind:data={$projectData[projectId]} />
-	<Footer />
-</main>
+<SliceZone slices={document.data.body} {components} {dev} />
