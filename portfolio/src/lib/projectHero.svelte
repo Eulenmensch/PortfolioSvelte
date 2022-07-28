@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Button from './button.svelte';
 	import Spacer from './spacer.svelte';
 	import { tweened } from 'svelte/motion';

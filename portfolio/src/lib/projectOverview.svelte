@@ -51,4 +51,9 @@
 </div>
 
 <style>
+	#container {
+		display: flex;
+		max-width: 140rem;
+		width: 100%;
+	}
 </style>
