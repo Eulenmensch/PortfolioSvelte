@@ -3,6 +3,8 @@ import { readable, type Readable } from "svelte/store";
 export const projectData: Readable<{ [index: string]: any }> = readable({
     internship: {
         videoId: '',
+        videoId2: '',
+        bodyColor: '#151b30',
         title: 'Unnanounced AAA Game',
         titleFont: "'Inter', Arial, sans-serif",
         titleSize: '4rem',
@@ -27,10 +29,14 @@ export const projectData: Readable<{ [index: string]: any }> = readable({
         },
         gameDescription: '',
         videoDescription: '',
-        calloutText: ['']
+        calloutText: [
+            'As part of my studies, I completed an internship in game design at KING Art Games. Working with a prototype during pre-production, I helped bring the combat system to an MVP state and created a framework as well as an interactive prototype for the UX and UI of the turn-based combat encounters of the game.',
+            'Since the game is yet to be announced, I can only share a small insight into the work I did during my time at KING Art Games but I will update the page once I can do so.'
+        ]
     },
     hoversword: {
         videoId: 'HP-GeZLaELo',
+        videoId2: '',
         title: 'Hoversword',
         titleFont: "'KnifePrincess', Arial, sans-serif",
         titleSize: '4rem',
@@ -59,6 +65,7 @@ export const projectData: Readable<{ [index: string]: any }> = readable({
     },
     nvfps: {
         videoId: 'rMMEmDwaF6Y',
+        videoId2: '',
         title: 'Non-Violent FPS',
         titleFont: "'Bigboy', Arial, sans-serif",
         titleSize: '5rem',
