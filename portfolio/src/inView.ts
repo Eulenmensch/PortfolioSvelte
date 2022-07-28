@@ -11,10 +11,10 @@
  * https://medium.com/mkdir-awesome/how-to-animate-a-svelte-component-when-it-comes-into-view-f6cd0efb3b60
  */
 
-export default function inView(node, params = {}) {
-    let observer;
+export default function inView(node: Element, params = {}) {
+    let observer: IntersectionObserver;
 
-    const handleIntersect = (e) => {
+    const handleIntersect = (e: { isIntersecting: any; }[]) => {
         const v = e[0].isIntersecting ? "enter" : "exit";
         node.dispatchEvent(new CustomEvent(v));
     };
@@ -29,7 +29,7 @@ export default function inView(node, params = {}) {
     setObserver(params);
 
     return {
-        update(params) {
+        update(params: { root: any; threshold: any; }) {
             setObserver(params);
         },
 
