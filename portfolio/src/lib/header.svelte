@@ -6,7 +6,7 @@
 <header id="header">
 	<Menu />
 	<div id="name">Yoshua Woo</div>
-	<Spacer width="1rem" />
+	<Spacer width="1.5rem" />
 	<div id="occupation">Game Designer</div>
 </header>
 
@@ -17,7 +17,7 @@
 		z-index: 100;
 		display: flex;
 		width: 100%;
-		padding: 2.5rem 5rem 0.5rem;
+		padding: 2.5rem 1rem 0.5rem 5rem;
 	}
 	#name {
 		font-size: 2rem;
