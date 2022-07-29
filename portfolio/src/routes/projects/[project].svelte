@@ -3,9 +3,16 @@
 	import { dev } from '$app/env';
 	import components from '$lib/projectSlices';
 
-	export let document;
+	import { Body } from 'svelte-body';
+
+	export let document: { [key: string]: any };
+
+	const style = {
+		backgroundColor: document.data.primary_color,
+		color: document.data.text_color
+	};
 </script>
 
-<div style:color={document.data.text_color}>
-	<SliceZone slices={document.data.body} {components} {dev} context={{ doc: document }} />
-</div>
+<Body {style} />
+
+<SliceZone slices={document.data.body} {components} {dev} context={{ doc: document }} />
