@@ -1,4 +1,3 @@
-<!-- this needs styling options for all the different slice labels -->
 <script lang="ts">
 	import * as prismicH from '@prismicio/helpers';
 	export let slice: { [key: string]: any };
@@ -11,3 +10,6 @@
 	<img src={item.paragraph_image.url} alt={item.paragraph_image.alt} />
 	{@html prismicH.asHTML(item.image_description)}
 {/each}
+
+<!-- this needs different components for all the different slice labels -->
+<!-- use the component directive here to dynamically load the correct component -->

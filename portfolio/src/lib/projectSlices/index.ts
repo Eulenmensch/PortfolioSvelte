@@ -4,6 +4,7 @@ import Facts from "./facts.svelte";
 import ElevatorPitch from "./elevatorPitch.svelte";
 import Responsibilities from "./responsibilities.svelte";
 import ImageParagraph from "./imageParagraph.svelte";
+import Gallery from "./gallery.svelte";
 
 const components = {
     header: Header,
@@ -11,7 +12,8 @@ const components = {
     facts: Facts,
     elevator_pitch: ElevatorPitch,
     responsibilities: Responsibilities,
-    paragraph_with_image: ImageParagraph
+    paragraph_with_image: ImageParagraph,
+    gallery: Gallery
 }
 
 export default components;
