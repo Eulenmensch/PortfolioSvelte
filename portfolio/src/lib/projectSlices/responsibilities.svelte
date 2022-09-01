@@ -13,6 +13,8 @@
 		border-left: 0.3rem solid;
 		padding: 1rem 1rem 1.5rem;
 		background: hsla(0 0% 0% / 0.7);
+		font-size: 1.3rem;
+		margin: 5rem 0;
 	}
 	#container :global(p):not(:last-child) {
 		margin-bottom: 1rem;

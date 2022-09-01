@@ -7,8 +7,6 @@
 <main>
 	<div>
 		<iframe
-			width="100%"
-			height="100%"
 			src={prismicH.asLink(slice.primary.video_url)}
 			title="{context.doc.uid} youtube video"
 			frameborder="0"
@@ -20,7 +18,19 @@
 
 <style>
 	div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 100vw;
 		aspect-ratio: 16/9;
+		margin: 2rem 0;
+		padding: 0 var(--x-padding);
+	}
+	iframe {
+		width: 100%;
+		aspect-ratio: 16/9;
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		box-shadow: 0rem 0.3rem 3rem rgba(0, 0, 0, 0.6);
 	}
 </style>
