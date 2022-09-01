@@ -1,9 +1,10 @@
 <script lang="ts">
-	import * as prismicH from '@prismicio/helpers';
 	export let slice: { [key: string]: any };
+	export let context: { [key: string]: any };
 	let images: { [key: string]: any } = slice.items;
 </script>
 
+<h1 style:text-decoration="{context.doc.data.highlight_color} underline">Gallery</h1>
 <div id="container">
 	{#each Object.entries(images) as [key, image]}
 		<div
@@ -21,13 +22,20 @@
 
 <style>
 	:root {
-		--column-width: 17rem;
+		--column-width: 13rem;
+	}
+	h1 {
+		padding: 0 var(--x-padding);
+		margin-bottom: 3.5rem;
+		margin-top: 7rem;
+		font-size: 3rem;
+		text-align: center;
 	}
 	#container {
 		max-width: 140rem;
 		margin: 0 auto;
 		display: grid;
-		grid-gap: 2rem;
+		grid-gap: 1.5rem;
 		grid-template-columns: repeat(auto-fill, var(--column-width));
 		grid-auto-rows: minmax(20px, auto);
 		justify-content: center;
@@ -67,7 +75,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		border-radius: 1rem;
+		border-radius: var(--border-radius);
 		overflow: hidden;
 	}
 	#container > * img:hover {
