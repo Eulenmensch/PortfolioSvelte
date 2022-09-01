@@ -18,10 +18,6 @@
 		padding: 0;
 	}
 
-	:global(:root) {
-		--text-color-primary: whitesmoke;
-	}
-
 	:global(body) {
 		margin: 0;
 		padding: 0;
@@ -33,11 +29,18 @@
 
 	:root {
 		font-family: 'Inter', Arial, sans-serif;
-		font-size: 10px;
+		font-size: 12px;
 		line-height: 150%;
 	}
 
 	:global(button) {
 		all: unset;
+	}
+
+	:global(:root) {
+		--text-color-primary: whitesmoke;
+		--border-radius: 1rem;
+		--x-padding: 1.3rem;
+		--box-shadow: 0rem 0.3rem 3rem rgba(0, 0, 0, 0.6);
 	}
 </style>
