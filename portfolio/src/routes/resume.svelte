@@ -1,6 +1,15 @@
 <script lang="ts">
+	import * as prismicH from '@prismicio/helpers';
 	import Spacer from '$lib/spacer.svelte';
+
+	export let document: { [key: string]: any };
+	let page = document.results[0].data;
+	console.log(page.link.url);
+
+	let innerWidth: number;
 </script>
+
+<svelte:window bind:innerWidth />
 
 <svelte:head>
 	<style>
@@ -16,22 +25,25 @@
 <main>
 	<h1>Resumé</h1>
 	<Spacer height="10rem" />
-	<div id="resume-container">
-		<div id="resume-embed">
-			<iframe
-				src="https://drive.google.com/file/d/1-gNiHghbsMNHcCwtHJpqKspZ93B0lReT/preview"
-				width="100%"
-				height="100%"
-				allow="autoplay"
-				title="Resumé"
-			/>
+	{#if innerWidth >= 768}
+		<div id="resume-container">
+			<div id="resume-embed">
+				<iframe
+					src={prismicH.asLink(page.link) + '/preview'}
+					width="100%"
+					height="100%"
+					allow="autoplay"
+					title="Resumé"
+				/>
+			</div>
 		</div>
+	{:else}
 		<div id="resume-button">
-			<a href="https://drive.google.com/file/d/1-gNiHghbsMNHcCwtHJpqKspZ93B0lReT/view">
+			<a target="_blank" rel="noopener noreferrer" href={prismicH.asLink(page.link) + '/view'}>
 				<img src="images/icons/PDF.svg" alt="Clickable PDF Icon" />
 			</a>
 		</div>
-	</div>
+	{/if}
 </main>
 
 <style>
