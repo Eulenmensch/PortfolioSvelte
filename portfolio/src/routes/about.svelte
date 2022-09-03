@@ -1,29 +1,19 @@
+<script lang="ts">
+	import * as prismicH from '@prismicio/helpers';
+	import { Body } from 'svelte-body';
+	const style = {
+		backgroundColor: '#09275a',
+		width: '100vw'
+	};
+
+	export let document: { [key: string]: any };
+</script>
+
+<Body {style} />
 <main>
 	<div id="text-container">
-		<h1>About Me</h1>
-		<p>Hi, my name is Yoshua.</p>
-		<p>
-			I recently finished my studies in Game Design at HTW Berlin and am now looking to start my
-			career as a game designer.
-		</p>
-		<p>
-			In my four years of making games, I found that I have a particular love for making player
-			controls feel great to interact with, no matter if it's 1st person, 3rd person, or a top down
-			click-to-move setup.
-		</p>
-		<p>
-			I'm fascinated with gameplay and combat systems and have spent a lot of time creating, testing
-			and iterating them.
-		</p>
-		<p>
-			I thrive in multi-disciplinary teams as I enjoy highly collaborative work and being surrounded
-			by like-minded people. I love learning and keeping up with new developments in games and tech
-			and generally have a project on the side where I can test and try out new things.
-		</p>
-		<p>
-			When I'm not working on games, I'm an avid tabletop game master, home cook and go rock
-			climbing.
-		</p>
+		<h1>{prismicH.asText(document.results[0].data.heading)}</h1>
+		{@html prismicH.asHTML(document.results[0].data.about_me)}
 	</div>
 	<div id="background-image" />
 	<div id="background-gradient" />
@@ -48,7 +38,7 @@
 		padding-top: 12rem;
 		padding-bottom: 3rem;
 	}
-	p {
+	#text-container > :global(p) {
 		font-size: 1.6rem;
 		line-height: 150%;
 		padding-bottom: 1.5rem;
