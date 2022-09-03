@@ -16,7 +16,7 @@
 		roles: string | null,
 		pitch: string | null,
 		video_url: string | null;
-	const slices: { [key: string]: any } = project.data.body;
+	const slices: { [key: string]: any } = project.body;
 	Object.entries(slices).forEach((slice) => {
 		if (slice[1].slice_type == 'header') {
 			title = prismicH.asText(slice[1].primary.project_name);

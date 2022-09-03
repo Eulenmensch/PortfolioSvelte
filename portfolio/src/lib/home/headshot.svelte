@@ -3,6 +3,8 @@
 	import * as simplex from 'simplex-noise';
 	import { onMount } from 'svelte';
 
+	export let image;
+
 	onMount(() => {
 		const path = document.querySelector('path');
 		function createPoints() {
@@ -68,7 +70,7 @@
 		<defs>
 			<!-- Our gradient fill #gradient -->
 			<pattern id="portrait" patternUnits="userSpaceOnUse" width="200" height="200">
-				<image href="images/home/YoshuaPortraitHalftone.jpg" x="0" y="0" width="200" height="200" />
+				<image href={image} x="0" y="0" width="200" height="200" />
 			</pattern>
 		</defs>
 		<path d="" fill="url(#portrait)" stroke="#FFBB25" stroke-width="6" />

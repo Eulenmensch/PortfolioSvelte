@@ -4,7 +4,7 @@ export async function GET({ params }: { [key: string]: any }) {
 
     const repositoryName = "yoshua-portfolio";
     const client = prismic.createClient(repositoryName);
-    const document = await client.getAllByType('project_page', params.project);
+    const document = await client.getByUID('home', 'home', { fetchLinks: 'project_page.body' });
 
     if (document) {
         return {
