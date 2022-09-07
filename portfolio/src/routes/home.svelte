@@ -4,6 +4,7 @@
 	import Headshot from '$lib/home/headshot.svelte';
 	import Wave from '$lib/home/wave.svelte';
 	import ProjectCard from '$lib/home/projectCard.svelte';
+	import AdditionalCard from '$lib/home/additionalCard.svelte';
 	const style = {
 		backgroundColor: '#636A25',
 		width: '100vw'
@@ -15,7 +16,14 @@
 	let body: { [key: string]: any } = document.data.body;
 	Object.entries(body).forEach((entry) => {
 		if (entry[1].slice_type == 'project') {
-			projectPages.push(entry[1].primary.project_page.data);
+			projectPages.push(entry[1].primary);
+		}
+	});
+
+	let secondaryPages: Array<{ [key: string]: any }> = new Array();
+	Object.entries(body).forEach((entry) => {
+		if (entry[1].slice_type == 'secondary_project') {
+			secondaryPages.push(entry[1]);
 		}
 	});
 
@@ -39,8 +47,28 @@
 <Headshot {image} />
 <Wave />
 
-{#each projectPages as project, i}
-	<ProjectCard bind:project bind:color={colors[i]} />
-{/each}
+<div id="project-cards">
+	{#each projectPages as project, i}
+		<ProjectCard bind:project bind:color={colors[i]} />
+	{/each}
+</div>
 
-<style></style>
+<div id="additional-cards">
+	{#each secondaryPages as project, i}
+		<AdditionalCard bind:project bind:color={colors[i + 1]} />
+	{/each}
+</div>
+
+<style>
+	#project-cards {
+		padding: 0 2rem;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#additional-cards {
+		position: relative;
+		z-index: 10;
+	}
+</style>
