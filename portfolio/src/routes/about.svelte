@@ -24,6 +24,7 @@
 		color: whitesmoke;
 	}
 	main {
+		padding: 0 var(--x-padding);
 		width: 100%;
 		display: flex;
 		flex-direction: column;
