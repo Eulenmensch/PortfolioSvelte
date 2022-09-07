@@ -12,10 +12,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: 0.3rem solid var(--text-color-primary);
-		border-bottom: 0.5rem solid var(--text-color-primary);
-		color: var(--text-color-primary);
+		border: 0.4rem solid var(--color);
+		border-radius: 100rem;
+		/* border-bottom: 0.5rem solid var(--text-color-primary); */
+		color: var(--color);
+		background-color: black;
 		text-decoration: none;
 		font-weight: 900;
+		cursor: pointer;
+		pointer-events: auto;
 	}
 </style>
