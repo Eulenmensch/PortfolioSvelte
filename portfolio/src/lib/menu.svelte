@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Burger from './burger.svelte';
+	// import Burger from './burger.svelte';
 	let clicked: boolean = false;
 
 	function toggleClicked() {
@@ -8,7 +8,7 @@
 </script>
 
 <menu>
-	<img src="images/icons/Favicon.svg" alt="Woo Favicon" on:click={toggleClicked} />
+	<img id="icon" src="/images/icons/Favicon.svg" alt="" on:click={toggleClicked} />
 	<!-- <Burger on:click={toggleClicked} /> -->
 	{#if clicked}
 		<nav>
@@ -24,8 +24,9 @@
 </menu>
 
 <style>
-	img {
+	#icon {
 		width: 3.5rem;
+		aspect-ratio: 1/1;
 	}
 	menu {
 		position: fixed;
