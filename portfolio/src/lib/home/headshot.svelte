@@ -65,14 +65,18 @@
 			}
 		})();
 	});
+
+	let innerWidth;
 </script>
 
-<main>
+<svelte:window bind:innerWidth />
+
+<main class:tablet={innerWidth > 767} class:widescreen={innerWidth > 1023}>
 	<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 		<defs>
 			<!-- Our gradient fill #gradient -->
 			<pattern id="portrait" patternUnits="userSpaceOnUse" width="200" height="200">
-				<image href={image} x="0" y="0" width="200" height="200" />
+				<image href={image} x="10" y="10" width="180" height="180" />
 			</pattern>
 		</defs>
 		<path d="" fill="url(#portrait)" stroke="#FFBB25" stroke-width="6" />
@@ -87,15 +91,39 @@
 	}
 
 	main {
-		margin-top: 13rem;
+		margin-top: 30vw;
+		padding: 0 2rem;
 		height: 100%;
-		width: 100vw;
+		width: 100%;
 		display: grid;
 		place-items: center;
+		/* background-color: rgba(255, 0, 0, 0.3); */
+	}
+	.tablet {
+		margin-top: 4vw;
+	}
+	.widescreen {
+		margin: 0;
+	}
+
+	.tablet path {
+		stroke-width: 7.5;
+	}
+	.widescreen path {
+		stroke-width: 6.5;
 	}
 
 	svg {
-		width: 90vmin;
-		height: 90vmin;
+		max-width: 35rem;
+		aspect-ratio: 1/1;
+		/* background-color: rgba(0, 255, 0, 0.3); */
+	}
+	.tablet svg {
+		width: 60vw;
+		aspect-ratio: 1/1;
+		max-width: 80rem;
+	}
+	.widescreen svg {
+		width: 38rem;
 	}
 </style>
