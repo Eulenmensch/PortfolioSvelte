@@ -5,9 +5,14 @@
 	import Wave from '$lib/home/wave.svelte';
 	import ProjectCard from '$lib/home/projectCard.svelte';
 	import AdditionalCard from '$lib/home/additionalCard.svelte';
-	const style = {
-		backgroundColor: '#636A25',
-		width: '100vw'
+
+	let innerWidth: number = 0;
+
+	let style = {};
+	$: style = {
+		width: '100vw',
+		...(innerWidth < 1024 && { backgroundColor: '#636A25' }),
+		...(innerWidth > 1023 && { backgroundColor: '#0d131b' })
 	};
 
 	export let document: { [key: string]: any };
@@ -43,23 +48,64 @@
 	];
 </script>
 
+<svelte:window bind:innerWidth />
+
 <Body {style} />
-<Headshot {image} />
-<Wave />
+<div class:tablet={innerWidth > 767} class:widescreen={innerWidth > 1023}>
+	<div id="hero">
+		{#if innerWidth > 1023}
+			<div>
+				{@html prismicH.asHTML(document.data.body[0].primary.hero_text)}
+			</div>
+		{/if}
+		<Headshot {image} />
+	</div>
+	<Wave />
 
-<div id="project-cards">
-	{#each projectPages as project, i}
-		<ProjectCard bind:project bind:color={colors[i]} />
-	{/each}
-</div>
+	<div id="projects">
+		<div id="project-cards">
+			{#each projectPages as project, i}
+				<ProjectCard bind:project bind:color={colors[i]} />
+			{/each}
+		</div>
 
-<div id="additional-cards">
-	{#each secondaryPages as project, i}
-		<AdditionalCard bind:project bind:color={colors[i + 1]} />
-	{/each}
+		<div id="additional-cards">
+			{#each secondaryPages as project, i}
+				<AdditionalCard bind:project bind:color={colors[i + 1]} />
+			{/each}
+		</div>
+	</div>
 </div>
 
 <style>
+	.tablet #projects {
+		margin-top: 20rem;
+	}
+	.widescreen #projects {
+		margin-top: 25rem;
+	}
+
+	.widescreen #hero {
+		width: 80rem;
+		display: flex;
+		align-items: center;
+		margin: 20rem auto 0;
+	}
+	.widescreen #hero > div {
+		padding-top: 4rem;
+		width: 80%;
+		margin-right: 6rem;
+	}
+	.widescreen #hero > div > :global(p) {
+		margin-bottom: 1rem;
+		font-size: 1.9rem;
+		line-height: 150%;
+		font-weight: 300;
+	}
+	.widescreen #hero > div > :global(p > strong) {
+		font-weight: 800;
+	}
+
 	#project-cards {
 		padding: 0 2rem;
 		width: 100%;
