@@ -40,7 +40,12 @@
 
 <svelte:window bind:innerWidth />
 
-<main style:box-shadow={shadow} class:widescreen={innerWidth > 1024} style:--border-color={color}>
+<main
+	style:box-shadow={shadow}
+	class:tablet={innerWidth > 767}
+	class:widescreen={innerWidth > 1023}
+	style:--border-color={color}
+>
 	<div id="video-container">
 		{#if video_url != null}
 			<iframe
@@ -53,15 +58,17 @@
 		{/if}
 	</div>
 	<div id="content-container">
-		{#if title_graphic != null}
-			<img id="title_graphic" src={title_graphic} alt="" />
-		{:else}
-			<h1>{title}</h1>
-		{/if}
-		<p id="genre">{genre}</p>
-		<p id="roles"><b>Roles:</b> {roles}</p>
-		<div id="pitch">
-			{@html prismicH.asHTML(project.overview)}
+		<div id="text-container">
+			{#if title_graphic != null}
+				<img id="title-graphic" src={title_graphic} alt="" />
+			{:else}
+				<h1>{title}</h1>
+			{/if}
+			<p id="genre">{genre}</p>
+			<p id="roles"><b>Roles:</b> {roles}</p>
+			<div id="pitch">
+				{@html prismicH.asHTML(project.overview)}
+			</div>
 		</div>
 		<div id="button-container">
 			<Button {color} link={'/projects/' + project.project_page.uid}>More</Button>
@@ -88,14 +95,17 @@
 		max-width: 140rem;
 		min-height: 43rem;
 		padding: 0;
-		box-shadow: none !important;
+		box-shadow: var(--box-shadow) !important;
+		border: none;
 		border-width: 1rem;
 		border-radius: calc(var(--border-radius) * 4);
 		overflow: hidden;
 	}
+
 	.widescreen #video-container {
 		width: 50%;
 	}
+
 	#video-container > iframe {
 		width: 100%;
 		aspect-ratio: 16/9;
@@ -108,6 +118,12 @@
 		aspect-ratio: initial;
 		border-radius: 0;
 	}
+
+	.tablet #content-container {
+		display: flex;
+		flex-direction: row;
+		column-gap: 8rem;
+	}
 	.widescreen #content-container {
 		display: flex;
 		flex-direction: column;
@@ -116,49 +132,77 @@
 		max-width: revert;
 		padding: 2.5rem 3rem 3rem 5rem;
 	}
-	#title_graphic {
+
+	.tablet #text-container {
+		padding-bottom: 2rem;
+	}
+	.widescreen #text-container {
+		padding: 0;
+	}
+
+	#title-graphic {
 		height: 3rem;
 		max-width: 100%;
+		margin-bottom: 0.5rem;
 	}
-	.widescreen #title_graphic {
+	.tablet #title-graphic {
+		margin-bottom: 1rem;
+		height: 4rem;
+	}
+	.widescreen #title-graphic {
 		height: 5rem;
 		align-self: flex-start;
 		margin-bottom: 0.5rem;
 	}
+
 	h1 {
 		margin-bottom: 0.5rem;
 		font-size: 2.5rem;
 		line-height: 100%;
+	}
+	.tablet h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
 	}
 	.widescreen h1 {
 		font-size: 4rem;
 		line-height: 100%;
 		margin-bottom: 1rem;
 	}
+
 	p {
 		font-size: 1.2rem;
+	}
+	.tablet p {
+		font-size: 1.6rem;
 	}
 	.widescreen p {
 		font-size: 1.6rem;
 		font-weight: 300;
 	}
+
 	#genre {
 		margin-bottom: 1rem;
 	}
 	.widescreen #genre {
 		margin-bottom: 2rem;
 	}
+
 	#roles {
 		margin-bottom: 2rem;
 	}
 	.widescreen #roles {
 		margin-bottom: 2.5rem;
 	}
+
 	#pitch > :global(*) {
 		margin-bottom: 0.5rem;
 		font-size: 1.2rem;
 		line-height: 130%;
 		font-weight: 600;
+	}
+	.tablet #pitch > :global(*) {
+		font-size: 1.6rem;
 	}
 	.widescreen #pitch > :global(*) {
 		margin-bottom: 1rem;
@@ -166,6 +210,7 @@
 		line-height: 150%;
 		font-weight: 700;
 	}
+
 	#button-container {
 		margin-top: 2.5rem;
 		display: flex;
@@ -175,7 +220,12 @@
 		font-size: 1.5rem;
 		line-height: 150%;
 	}
+	.tablet #button-container {
+		flex-direction: column;
+		align-self: flex-end;
+	}
 	.widescreen #button-container {
+		flex-direction: row;
 		align-self: flex-end;
 		flex-grow: 1;
 	}
