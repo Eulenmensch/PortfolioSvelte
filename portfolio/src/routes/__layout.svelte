@@ -39,6 +39,13 @@
 
 	:global(:root) {
 		--text-color-primary: whitesmoke;
+		--mango-yellow: #ffbb25;
+		--bronze-yellow: #885b00;
+		--kaomaru-blue: #2d2c6d;
+		--mahogany-red: #b53401;
+		--queen-blue: #3f62a4;
+		--sea-green: #219653;
+		--gunmetal-blue: #16202f;
 		--border-radius: 1rem;
 		--x-padding: 1.3rem;
 		--box-shadow: 0rem 0.3rem 3rem rgba(0, 0, 0, 0.6);
