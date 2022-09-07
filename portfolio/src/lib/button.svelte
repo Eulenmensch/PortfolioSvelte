@@ -1,10 +1,17 @@
 <script lang="ts">
-	export let link: string = '';
+	export let link: string | null = 'javascript:;';
+	export let color: string = '';
 </script>
 
-<a href={link}>
-	<slot>Button</slot>
-</a>
+{#if link == 'javascript:;'}
+	<a href={link} style:--color={color} on:click>
+		<slot>Button</slot>
+	</a>
+{:else}
+	<a target="_blank" rel="noopener noreferrer" href={link} style:--color={color} on:click>
+		<slot>Button</slot>
+	</a>
+{/if}
 
 <style>
 	a {
