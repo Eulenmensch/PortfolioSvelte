@@ -9,7 +9,7 @@
 		const path = document.querySelector('path');
 		function createPoints() {
 			const points = [];
-			const numPoints = 6;
+			const numPoints = 9;
 			const angleStep = (Math.PI * 2) / numPoints;
 			const radius = 80;
 
@@ -39,11 +39,13 @@
 
 		const simplexNoise = simplex.createNoise2D();
 
-		let noiseStep = 0.0005;
+		let noiseStep = 0.0007;
+		// noiseStep = 0.005; //faster step for visual debugging
 		function noise(x, y) {
 			return simplexNoise(x, y);
 		}
 
+		let amplitude = 7;
 		(function animate() {
 			path.setAttribute('d', spline(points, 1, true));
 			requestAnimationFrame(animate);
@@ -52,8 +54,8 @@
 				const point = points[i];
 				const nX = noise(point.noiseOffsetX, point.noiseOffsetX);
 				const nY = noise(point.noiseOffsetY, point.noiseOffsetY);
-				const x = map(nX, -1, 1, point.initialX - 20, point.initialX + 20);
-				const y = map(nY, -1, 1, point.initialY - 20, point.initialY + 20);
+				const x = map(nX, -1, 1, point.initialX - amplitude, point.initialX + amplitude);
+				const y = map(nY, -1, 1, point.initialY - amplitude, point.initialY + amplitude);
 
 				point.x = x;
 				point.y = y;
