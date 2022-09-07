@@ -15,4 +15,4 @@
 
 <Body {style} />
 
-<SliceZone slices={document.data.body} {components} {dev} context={{ doc: document }} />
+<SliceZone slices={document.data.body} {components} context={{ doc: document }} />
