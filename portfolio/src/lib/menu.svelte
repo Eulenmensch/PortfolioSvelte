@@ -8,7 +8,8 @@
 </script>
 
 <menu>
-	<Burger on:click={toggleClicked} />
+	<img src="images/icons/Favicon.svg" alt="Woo Favicon" on:click={toggleClicked} />
+	<!-- <Burger on:click={toggleClicked} /> -->
 	{#if clicked}
 		<nav>
 			<ul>
@@ -23,9 +24,12 @@
 </menu>
 
 <style>
+	img {
+		width: 3.5rem;
+	}
 	menu {
 		position: fixed;
-		left: 2.5rem;
+		left: 1rem;
 	}
 	ul {
 		position: relative;
