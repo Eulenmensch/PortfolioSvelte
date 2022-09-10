@@ -3,7 +3,6 @@
 	import { onMount } from 'svelte';
 	import Button from '$lib/button.svelte';
 	import Spacer from '$lib/spacer.svelte';
-	import { bind } from 'svelte/internal';
 	export let project: { [key: string]: any };
 	export let color: string;
 
@@ -19,7 +18,8 @@
 		genre: string | null,
 		roles: string | null,
 		title_graphic: string | null,
-		video_url: string | null;
+		video_url: string | null,
+		background_url: string | null;
 
 	const slices: { [key: string]: any } = project.project_page.data.body;
 
@@ -27,6 +27,7 @@
 		if (slice[1].slice_type == 'header') {
 			title = prismicH.asText(slice[1].primary.project_name);
 			title_graphic = prismicH.asImageSrc(slice[1].primary.project_name_graphic);
+			background_url = prismicH.asImageSrc(slice[1].primary.header_image);
 		} else if (slice[1].slice_type == 'facts') {
 			genre = slice[1].primary.genre;
 			roles = slice[1].primary.role;
@@ -45,6 +46,7 @@
 	class:tablet={innerWidth > 767}
 	class:widescreen={innerWidth > 1023}
 	style:--border-color={color}
+	style:--background-url={'url(' + background_url + ')'}
 >
 	<div id="video-container">
 		{#if video_url != null}
@@ -80,19 +82,21 @@
 
 <style>
 	main {
-		max-width: 70rem;
 		padding: 1.3rem 1.5rem 2rem;
 		margin: 2rem 0;
 		margin-bottom: 6rem;
 		background-color: #1f1f22;
 		border: solid var(--border-color) 0.5rem;
 		border-radius: calc(var(--border-radius) * 3);
+		background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), var(--background-url);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0% 60%;
 	}
 	.widescreen {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		max-width: 140rem;
 		min-height: 43rem;
 		padding: 0;
 		box-shadow: var(--box-shadow) !important;
@@ -100,6 +104,10 @@
 		border-width: 1rem;
 		border-radius: calc(var(--border-radius) * 4);
 		overflow: hidden;
+		background: var(--background-url);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0% 60%;
 	}
 
 	.widescreen #video-container {
@@ -131,6 +139,7 @@
 		width: 50%;
 		max-width: revert;
 		padding: 2.5rem 3rem 3rem 5rem;
+		background-color: rgba(0, 0, 0, 0.9);
 	}
 
 	.tablet #text-container {
