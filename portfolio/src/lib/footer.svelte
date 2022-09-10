@@ -4,19 +4,36 @@
 	const year = new Date().getFullYear();
 </script>
 
-<Spacer height="20rem" />
 <footer>
-	<b>Copyright © {year} by Yoshua Woo</b>
-	<Spacer width="4rem" />
-	<p>All images, logos and names are used with permission</p>
+	<Spacer height="20rem" />
+	<div id="legal">
+		<b>Copyright © {year} by Yoshua Woo</b>
+		<Spacer width="4rem" height="1rem" />
+		<p>All images, logos and names are used with permission</p>
+	</div>
+	<Spacer height="10rem" />
 </footer>
-<Spacer height="10rem" />
 
 <style>
 	footer {
+		position: absolute;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		z-index: 200;
+	}
+	#legal {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 80%;
 		font-size: 1.3rem;
+	}
+	p,
+	b {
+		width: 100%;
+		text-align: center;
 	}
 </style>
