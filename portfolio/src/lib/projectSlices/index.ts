@@ -6,12 +6,14 @@ import Responsibilities from "./responsibilities.svelte";
 import ImageParagraph from "./imageParagraph.svelte";
 import VideoSection from "./videoSection.svelte";
 import Gallery from "./gallery.svelte";
+import SecondaryVideo from "./secondaryVideo.svelte";
 
 const components = {
     header: Header,
     hero_video: HeroVideo,
     facts: Facts,
     elevator_pitch: ElevatorPitch,
+    secondary_video: SecondaryVideo,
     responsibilities: Responsibilities,
     paragraph_with_image: ImageParagraph,
     video_section: VideoSection,

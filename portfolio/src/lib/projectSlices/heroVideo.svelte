@@ -21,9 +21,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 100vw;
+		width: 100%;
+		max-width: 90rem;
 		aspect-ratio: 16/9;
-		margin: 2rem 0;
+		margin: 2rem auto;
 		padding: 0 var(--x-padding);
 	}
 	iframe {
