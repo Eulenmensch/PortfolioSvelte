@@ -33,6 +33,12 @@
 		line-height: 150%;
 	}
 
+	@media only screen and (min-width: 2559px) {
+		:root {
+			font-size: 18px;
+		}
+	}
+
 	:global(button) {
 		all: unset;
 	}
