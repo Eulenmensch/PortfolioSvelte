@@ -5,6 +5,7 @@
 	import Wave from '$lib/home/wave.svelte';
 	import ProjectCard from '$lib/home/projectCard.svelte';
 	import AdditionalCard from '$lib/home/additionalCard.svelte';
+	import { getRepositoryName } from '@prismicio/client';
 
 	let innerWidth: number = 0;
 
@@ -46,6 +47,9 @@
 		'#B53401',
 		'#3F62A4'
 	];
+	//HACK: this orders the additional work containers in a way
+	//that their z-indexes order them visually correctly
+	let numbers = [8, 9, 6, 7, 4, 5, 2, 3];
 </script>
 
 <svelte:window bind:innerWidth />
@@ -71,7 +75,7 @@
 
 		<div id="additional-cards">
 			{#each secondaryPages as project, i}
-				<AdditionalCard bind:project bind:color={colors[i + 1]} />
+				<AdditionalCard bind:project bind:color={colors[i + 1]} bind:index={numbers[i]} />
 			{/each}
 		</div>
 	</div>
@@ -79,10 +83,15 @@
 
 <style>
 	.tablet #projects {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
 		margin-top: 20rem;
+		max-width: 70rem;
 	}
 	.widescreen #projects {
 		margin-top: 25rem;
+		max-width: 145rem;
 	}
 
 	.widescreen #hero {
@@ -113,8 +122,13 @@
 		flex-direction: column;
 		align-items: center;
 	}
+
 	#additional-cards {
 		position: relative;
 		z-index: 10;
+	}
+	.tablet #additional-cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 </style>
