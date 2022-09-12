@@ -71,8 +71,16 @@
 	{:else if image != null}
 		<img src={image} alt="project" />
 	{/if}
-
-	{#if isOpen}
+	{#if innerWidth > 767}
+		<div id="content">
+			<h1>{title}</h1>
+			<p id="genre">{genre}</p>
+			<!-- <p id="roles"><b>Roles:</b> {roles}</p> -->
+			<div id="pitch">
+				{@html pitch}
+			</div>
+		</div>
+	{:else if isOpen}
 		<div id="content" transition:slide={{ duration: 300 }}>
 			<h1>{title}</h1>
 			<p id="genre">{genre}</p>
@@ -82,6 +90,7 @@
 			</div>
 		</div>
 	{/if}
+
 	{#if innerWidth < 768}
 		<Button {color} on:click={toggle}>
 			<svg
