@@ -79,11 +79,12 @@
 	#paragraph-text :global(p:last-child) {
 		margin: 0;
 	}
-	:global(p, li) {
+	#paragraph-text :global(p),
+	#paragraph-text :global(li) {
 		font-size: 1.3rem;
 		line-height: 150%;
 	}
-	:global(ul) {
+	#paragraph-text :global(ul) {
 		margin: 1rem 0;
 		padding-left: 2rem;
 	}
