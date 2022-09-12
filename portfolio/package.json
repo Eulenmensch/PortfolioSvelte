@@ -18,6 +18,7 @@
         "@prismicio/svelte": "^0.0.4",
         "@sveltejs/adapter-auto": "next",
         "@sveltejs/kit": "next",
+        "@types/jquery": "^3.5.14",
         "@typescript-eslint/eslint-plugin": "^5.10.1",
         "@typescript-eslint/parser": "^5.10.1",
         "eslint": "^8.12.0",
@@ -37,6 +38,7 @@
     "type": "module",
     "dependencies": {
         "@georgedoescode/spline": "^1.0.1",
+        "jquery": "^3.6.1",
         "simplex-noise": "^4.0.0",
         "svelte-youtube": "^0.0.2"
     }
