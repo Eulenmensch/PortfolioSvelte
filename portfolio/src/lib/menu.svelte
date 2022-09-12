@@ -34,7 +34,7 @@
 			<nav in:fade={{ delay: 200, duration: 300 }} out:fade={{ duration: 200 }}>
 				<ul>
 					<li class="nav-item">
-						<a href="/home" on:click={toggleClicked}>Home</a>
+						<a href="/" on:click={toggleClicked}>Home</a>
 					</li>
 					<li class="nav-item">
 						<a href="/about" on:click={toggleClicked}>About</a>
@@ -51,7 +51,7 @@
 						>
 					</li>
 					<li class="nav-item">
-						<a href="/home#contact" on:click={toggleClicked}>Contact</a>
+						<a href="/#contact" on:click={toggleClicked}>Contact</a>
 					</li>
 				</ul>
 			</nav>
