@@ -9,6 +9,10 @@
 	export let document: { [key: string]: any };
 </script>
 
+<svelte:head>
+	<title>About</title>
+</svelte:head>
+
 <Body {style} />
 <main>
 	<div id="text-container">

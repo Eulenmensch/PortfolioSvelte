@@ -24,8 +24,20 @@
 		backgroundColor: document.data.primary_color,
 		color: document.data.text_color
 	};
+
+	let title: string = document.slugs[0];
+	let splitTitle = title.split('-');
+	let upperSplitTitle = new Array<string>();
+	splitTitle.forEach((word) => {
+		upperSplitTitle.push(word.charAt(0).toUpperCase() + word.substring(1));
+	});
+	title = upperSplitTitle.join(' ');
+	console.log(title);
 </script>
 
+<svelte:head>
+	<title>{title}</title>
+</svelte:head>
 <svelte:window bind:innerWidth />
 <Body {style} />
 
