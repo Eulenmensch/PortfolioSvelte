@@ -21,7 +21,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		z-index: 200;
+		z-index: 20;
 	}
 	#legal {
 		display: flex;
