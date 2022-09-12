@@ -32,7 +32,6 @@
 		upperSplitTitle.push(word.charAt(0).toUpperCase() + word.substring(1));
 	});
 	title = upperSplitTitle.join(' ');
-	console.log(title);
 </script>
 
 <svelte:head>
@@ -75,7 +74,7 @@
 				{#each Object.entries(slices) as slice}
 					{#if slice[1].slice_type == 'secondary_video'}
 						<div id="secondary-video">
-							<SecondaryVideo bind:slice={slice[1]} bind:context />
+							<SecondaryVideo bind:slice={slice[1]} />
 						</div>
 					{/if}
 				{/each}

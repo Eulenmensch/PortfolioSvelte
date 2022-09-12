@@ -1,6 +1,5 @@
 <script lang="ts">
 	export let slice: { [key: string]: any };
-	export let context: { [key: string]: any };
 
 	let innerWidth: number;
 </script>
