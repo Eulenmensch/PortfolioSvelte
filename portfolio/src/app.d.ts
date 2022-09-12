@@ -9,3 +9,4 @@ declare namespace App {
 	// interface Stuff {}
 }
 declare module 'svelte-youtube';
+declare module '@georgedoescode/spline';

@@ -1,11 +1,12 @@
 <script>
-	import { spline } from '@georgedoescode/spline';
 	import * as simplex from 'simplex-noise';
 	import { onMount } from 'svelte';
 
 	export let image;
 
-	onMount(() => {
+	onMount(async () => {
+		const spline = await import('@georgedoescode/spline');
+
 		const path = document.querySelector('path');
 		function createPoints() {
 			const points = [];
@@ -47,7 +48,7 @@
 
 		let amplitude = 7;
 		(function animate() {
-			path.setAttribute('d', spline(points, 1, true));
+			path.setAttribute('d', spline.spline(points, 1, true));
 			requestAnimationFrame(animate);
 
 			for (let i = 0; i < points.length; i++) {
