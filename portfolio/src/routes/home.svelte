@@ -5,7 +5,7 @@
 	import Wave from '$lib/home/wave.svelte';
 	import ProjectCard from '$lib/home/projectCard.svelte';
 	import AdditionalCard from '$lib/home/additionalCard.svelte';
-	import { getRepositoryName } from '@prismicio/client';
+	import ContactForm from '$lib/home/contactForm.svelte';
 
 	let innerWidth: number = 0;
 
@@ -33,7 +33,14 @@
 		}
 	});
 
-	let image = prismicH.asImageSrc(document.data.body[0].primary.hero_image);
+	let contactSlice: { [key: string]: any };
+	Object.entries(body).forEach((entry) => {
+		if (entry[1].slice_type == 'contact_form') {
+			contactSlice = entry[1];
+		}
+	});
+
+	let profile_photo = prismicH.asImageSrc(document.data.body[0].primary.hero_image);
 	// Colors from: https://hue.tools/mix?mode=lch&colors=636a25ff%3B7600ffff&gamma=1.01&format=hex
 	// FIXME: Should be solved using an algorithm instead of repeating the colors
 	let colors = [
@@ -62,7 +69,7 @@
 				{@html prismicH.asHTML(document.data.body[0].primary.hero_text)}
 			</div>
 		{/if}
-		<Headshot {image} />
+		<Headshot image={profile_photo} />
 	</div>
 	<Wave />
 
@@ -78,6 +85,10 @@
 				<AdditionalCard bind:project bind:color={colors[i + 1]} bind:index={numbers[i]} />
 			{/each}
 		</div>
+	</div>
+
+	<div id="contact">
+		<ContactForm bind:contactSlice />
 	</div>
 </div>
 
@@ -130,5 +141,13 @@
 	.tablet #additional-cards {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+	}
+
+	.tablet #contact {
+		margin: 0 2rem;
+	}
+	.widescreen #contact {
+		margin-top: 10rem;
+		margin-bottom: 5rem;
 	}
 </style>
