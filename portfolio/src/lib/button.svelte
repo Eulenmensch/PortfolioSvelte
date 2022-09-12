@@ -28,5 +28,10 @@
 		font-weight: 900;
 		cursor: pointer;
 		pointer-events: auto;
+		transition: background-color 300ms, color 300ms;
+	}
+	a:hover {
+		background-color: var(--color);
+		color: black;
 	}
 </style>
