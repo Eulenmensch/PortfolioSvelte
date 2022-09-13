@@ -19,8 +19,12 @@
 		<h1>{prismicH.asText(document.results[0].data.heading)}</h1>
 		{@html prismicH.asHTML(document.results[0].data.about_me)}
 	</div>
-	<div id="background-image" />
-	<div id="background-gradient" />
+	<div
+		id="background-image"
+		style:background-image={'linear-gradient(180deg, rgba(0, 255, 191, 0.25), hsla(0, 0%, 100%, 0)), linear-gradient(180deg, transparent, #09275a), linear-gradient(180deg, rgba(9, 63, 90, 0.78), rgba(9, 63, 90, 0.78)), url(' +
+			prismicH.asImageSrc(document.results[0].data.background_image) +
+			')'}
+	/>
 </main>
 
 <style>
@@ -54,10 +58,6 @@
 		z-index: -10;
 		height: 100vh;
 		width: 100%;
-		background-image: linear-gradient(180deg, rgba(0, 255, 191, 0.25), hsla(0, 0%, 100%, 0)),
-			linear-gradient(180deg, transparent, #09275a),
-			linear-gradient(180deg, rgba(9, 63, 90, 0.78), rgba(9, 63, 90, 0.78)),
-			url('images/about/aboutBackground.jpeg');
 		background-size: cover;
 	}
 </style>
