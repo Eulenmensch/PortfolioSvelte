@@ -8,6 +8,7 @@
 
 	let outerHeight: number;
 	let docHeight: number;
+	let scrollY: number = 0;
 
 	onMount(() => {
 		docHeight = document.body.scrollHeight;
@@ -20,9 +21,11 @@
 	});
 </script>
 
+<svelte:window bind:scrollY />
+
 <Header />
 <slot />
-{#if docHeight > outerHeight}
+{#if docHeight > outerHeight && scrollY > outerHeight / 2}
 	<BackTopButton />
 {/if}
 <Footer />
