@@ -155,8 +155,8 @@
 		border-radius: calc(var(--border-radius) * 2);
 	}
 	.widescreen video,
-	iframe,
-	img {
+	.widescreen iframe,
+	.widescreen img {
 		border-radius: 0;
 	}
 
