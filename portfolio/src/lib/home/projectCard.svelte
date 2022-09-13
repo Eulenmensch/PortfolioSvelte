@@ -75,7 +75,9 @@
 		<div id="button-container">
 			<Button {color} link={'/projects/' + project.project_page.uid}>More</Button>
 			<Spacer height="1rem" width="1rem" />
-			<Button {color} link={prismicH.asLink(project.external_link)}>itch.io</Button>
+			<Button {color} link={prismicH.asLink(project.external_link)}
+				>{project.external_button_text}</Button
+			>
 		</div>
 	</div>
 </main>
