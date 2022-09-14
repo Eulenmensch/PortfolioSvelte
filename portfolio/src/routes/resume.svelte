@@ -4,30 +4,18 @@
 
 	export let document: { [key: string]: any };
 	let page = document.results[0].data;
-	console.log(page.link.url);
 
 	let innerWidth: number;
-
-	let style: { background: string; color: string };
-	$: if (innerWidth < 768) {
-		style = {
-			background: 'linear-gradient(hsl(218, 91%, 21%), hsl(218, 91%, 10%))',
-			color: 'whitesmoke'
-		};
-	}
-	$: if (innerWidth > 767) {
-		style = {
-			background: 'linear-gradient(hsl(218, 91%, 21%), hsl(218, 91%, 10%) 20%)',
-			color: 'whitesmoke'
-		};
-	}
+	let style = {
+		backgroundColor: 'hsl(218, 91%, 10%)'
+	};
 </script>
-
-<svelte:window bind:innerWidth />
 
 <svelte:head>
 	<title>Resumé</title>
 </svelte:head>
+
+<svelte:window bind:innerWidth />
 
 <Body {style} />
 
@@ -61,6 +49,7 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
+		height: 100%;
 	}
 	h1 {
 		margin: 5rem 0 10rem;
@@ -76,7 +65,6 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		background-color: hsla(218, 91%, 10%, 1);
 	}
 	#resume-embed {
 		width: 100%;
@@ -96,4 +84,8 @@
 	#resume-button {
 		width: 20rem;
 	}
+
+	/* :global(footer) {
+		background-color: hsl(218, 91%, 10%);
+	} */
 </style>
