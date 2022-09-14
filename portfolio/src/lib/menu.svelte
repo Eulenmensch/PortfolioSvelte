@@ -44,10 +44,11 @@
 					</li>
 					<li class="nav-item">
 						<a
+							id="linkedin"
 							target="_blank"
 							rel="noopener noreferrer"
 							href="https://www.linkedin.com/in/yoshua-woo/"
-							on:click={toggleClicked}>LinkedIn™</a
+							on:click={toggleClicked}>LinkedIn</a
 						>
 					</li>
 					<li class="nav-item">
@@ -60,6 +61,10 @@
 </menu>
 
 <style>
+	#linkedin::after {
+		content: '™';
+		position: absolute;
+	}
 	#icon {
 		position: absolute;
 		width: 3.5rem;
@@ -115,6 +120,7 @@
 		line-height: 180%;
 	}
 	.nav-item a {
+		position: relative;
 		color: var(--text-color-primary);
 		text-decoration: none;
 	}
