@@ -84,6 +84,9 @@
 		font-size: 1.3rem;
 		line-height: 150%;
 	}
+	.widescreen #paragraph-text :global(li) {
+		margin-bottom: 0.7rem;
+	}
 	#paragraph-text :global(ul) {
 		margin: 1rem 0;
 		padding-left: 2rem;
@@ -167,5 +170,9 @@
 		font-size: 1rem;
 		font-weight: bold;
 		padding-left: 0.3rem;
+	}
+	.widescreen #image-description :global(p) {
+		margin-top: 0.5rem;
+		font-size: 1.2rem;
 	}
 </style>
