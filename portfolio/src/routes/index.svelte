@@ -67,14 +67,16 @@
 
 <Body {style} />
 <div class:tablet={innerWidth > 767} class:widescreen={innerWidth > 1023}>
-	<div id="hero">
-		{#if innerWidth > 1023}
-			<div>
-				{@html prismicH.asHTML(document.data.body[0].primary.hero_text)}
-			</div>
-		{/if}
-		<Headshot image={profile_photo} />
-	</div>
+	{#if body[0].primary.slice_type == 'hero_section'}
+		<div id="hero">
+			{#if innerWidth > 1023}
+				<div>
+					{@html prismicH.asHTML(document.data.body[0].primary.hero_text)}
+				</div>
+			{/if}
+			<Headshot image={profile_photo} />
+		</div>
+	{/if}
 	<Wave />
 
 	<div id="projects">
