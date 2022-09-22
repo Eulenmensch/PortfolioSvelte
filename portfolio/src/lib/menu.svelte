@@ -58,6 +58,33 @@
 			</nav>
 		</div>
 	{/if}
+	{#if innerWidth > 1023}
+		<nav id="widescreen-nav">
+			<ul>
+				<li class="nav-item">
+					<a href="/" on:click={toggleClicked}>Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="/about" on:click={toggleClicked}>About</a>
+				</li>
+				<li class="nav-item">
+					<a href="/resume" on:click={toggleClicked}>Resumé</a>
+				</li>
+				<li class="nav-item">
+					<a
+						id="linkedin"
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.linkedin.com/in/yoshua-woo/"
+						on:click={toggleClicked}>LinkedIn</a
+					>
+				</li>
+				<li class="nav-item">
+					<a href="/#contact" on:click={toggleClicked}>Contact</a>
+				</li>
+			</ul>
+		</nav>
+	{/if}
 </menu>
 
 <style>
@@ -75,6 +102,9 @@
 		cursor: pointer;
 		transition: filter 200ms;
 	}
+	.widescreen #icon {
+		position: fixed;
+	}
 	.widescreen #icon:hover {
 		filter: drop-shadow(0 0 8px rgba(255, 187, 37, 1));
 	}
@@ -82,11 +112,34 @@
 		position: fixed;
 		left: 0;
 		top: 0;
+		width: max-content;
+	}
+	.widescreen {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.widescreen #widescreen-nav {
+		position: relative;
+		left: 5rem;
+		top: 1.3rem;
+		width: 100%;
+		display: flex;
+		/* justify-content: center; */
+	}
+	.widescreen #widescreen-nav > ul {
+		display: flex;
+		margin: 0;
+		font-size: 1.5rem;
+	}
+	.widescreen #widescreen-nav .nav-item {
+		margin: 0 2rem;
+		font-weight: 700;
 	}
 	.clicked {
 		position: fixed;
 		height: 100vh;
-		width: 100vw;
+		width: 100%;
 		z-index: 400;
 		background-color: var(--kaomaru-blue);
 		display: flex;
@@ -94,19 +147,14 @@
 		justify-content: center;
 	}
 	.slide {
-		position: absolute;
 		top: 0;
 		left: 0;
-		height: 100vh;
-		width: 100vw;
 	}
 	#yellow {
 		background-color: var(--mango-yellow);
 	}
 	#red {
 		background-color: var(--mahogany-red);
-	}
-	nav {
 	}
 	ul {
 		font-size: 5vh;
@@ -116,7 +164,7 @@
 	}
 	.nav-item {
 		font-weight: 700;
-		text-shadow: 0.2rem 0.2rem blue;
+		text-shadow: -0.2rem 0.2rem blue;
 		line-height: 180%;
 	}
 	.nav-item a {
