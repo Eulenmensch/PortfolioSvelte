@@ -62,25 +62,24 @@
 		<nav id="widescreen-nav">
 			<ul>
 				<li class="nav-item">
-					<a href="/" on:click={toggleClicked}>Home</a>
+					<a href="/">Home</a>
 				</li>
 				<li class="nav-item">
-					<a href="/about" on:click={toggleClicked}>About</a>
+					<a href="/about">About</a>
 				</li>
 				<li class="nav-item">
-					<a href="/resume" on:click={toggleClicked}>Resumé</a>
+					<a href="/resume">Resumé</a>
 				</li>
 				<li class="nav-item">
 					<a
 						id="linkedin"
 						target="_blank"
 						rel="noopener noreferrer"
-						href="https://www.linkedin.com/in/yoshua-woo/"
-						on:click={toggleClicked}>LinkedIn</a
+						href="https://www.linkedin.com/in/yoshua-woo/">LinkedIn</a
 					>
 				</li>
 				<li class="nav-item">
-					<a href="/#contact" on:click={toggleClicked}>Contact</a>
+					<a href="/#contact">Contact</a>
 				</li>
 			</ul>
 		</nav>
