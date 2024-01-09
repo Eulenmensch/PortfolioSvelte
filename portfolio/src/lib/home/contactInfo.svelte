@@ -95,6 +95,10 @@
 		margin-left: 0.5rem;
 	}
 
+	.contact-info div {
+		margin-left: 0.5rem;
+	}
+
 	.tablet .contact-info a {
 		color: var(--text-color-primary);
 		margin-left: 1rem;
