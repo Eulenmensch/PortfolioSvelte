@@ -26,7 +26,7 @@
 					stroke-width="2.5"
 				/>
 			</svg>
-			<a href={'mailto:' + contactSlice.primary.email}>{contactSlice.primary.email}</a>
+			<div>{contactSlice.primary.email}</div>
 		</div>
 		<div class="contact-info">
 			<svg
