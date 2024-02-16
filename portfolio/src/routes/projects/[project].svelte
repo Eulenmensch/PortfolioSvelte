@@ -25,7 +25,7 @@
 		color: document.data.text_color
 	};
 
-	let title: string = document.slugs[0];
+	let title: string = document.uid;
 	let splitTitle = title.split('-');
 	let upperSplitTitle = new Array<string>();
 	splitTitle.forEach((word) => {
