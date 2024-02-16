@@ -11,10 +11,10 @@
 <style>
 	#container {
 		border-left: 0.3rem solid;
-		padding: 1rem 1rem 1.5rem;
+		padding: 1.5rem 2rem 2rem 3rem;
 		background: hsla(0 0% 0% / 0.7);
 		font-size: 1.3rem;
-		line-height: 150%;
+		line-height: 160%;
 		margin: 5rem 0;
 	}
 	#container :global(p):not(:last-child) {

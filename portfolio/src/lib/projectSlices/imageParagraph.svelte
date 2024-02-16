@@ -45,8 +45,12 @@
 		margin-bottom: 3rem;
 	}
 	.widescreen {
-		margin: 20rem 0;
+		margin: 10rem 0 20rem;
 		padding: 0;
+	}
+
+	.widescreen :first-of-type {
+		margin-top: 0;
 	}
 
 	.widescreen > * {
@@ -168,7 +172,7 @@
 
 	#image-description :global(p) {
 		font-size: 1rem;
-		font-weight: bold;
+		font-weight: 200;
 		padding-left: 0.3rem;
 	}
 	.widescreen #image-description :global(p) {

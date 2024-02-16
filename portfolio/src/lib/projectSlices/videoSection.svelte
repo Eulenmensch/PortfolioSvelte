@@ -46,11 +46,12 @@
 	}
 	main :global(p) {
 		font-size: 1rem;
-		font-weight: bold;
+		font-weight: 200;
 		padding-left: 0.3rem;
 		margin-bottom: 3rem;
 	}
 	.widescreen :global(p) {
 		font-size: 1.2rem;
+		font-weight: 200;
 	}
 </style>
