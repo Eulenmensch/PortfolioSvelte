@@ -57,7 +57,13 @@
 
 	@media only screen and (min-width: 2559px) {
 		:root {
-			font-size: 18px;
+			font-size: 16px;
+		}
+	}
+
+	@media only screen and (min-width: 3839px) {
+		:root {
+			font-size: 24px;
 		}
 	}
 
