@@ -1,0 +1,104 @@
+hero:
+  image:
+    src: /media/home/yoshuaportraithalftone.jpg
+    alt: portrait shot of a half-asian man wearing a blue jacket over a yellow shirt.
+  text: |-
+    Hey there 👋
+
+    I'm a driven and ambitious game designer from Berlin currently working as a **Game Designer** at **Sandbox Interactive**.
+specializations:
+  - 3Cs Design
+  - Game Feel
+  - Systems
+  - UX Design
+tools:
+  - Unity / C#
+  - Unreal Engine
+  - Jira / Git / SVN
+  - Figma / Blender
+projects:
+  - uid: albion-horizons
+    overview: For the Horizons update of Albion Online, I supervised the development and did the design of the dynamic encampment feature. Players praised the feature for bringing players back into and revitalizing the open world.
+    externalLink: https://albiononline.com/update/horizons
+    externalButtonText: Update Page
+  - uid: suspicious-games
+    overview: In our turn-based tactics game project, I led the design efforts to create a rich and immersive gaming experience. Drawing inspiration from deckbuilding and tactics games, our project aimed to deliver a dynamic and challenging gameplay experience. Players would navigate through strategic encounters, utilizing a diverse array of cards and abilities to outmaneuver their opponents.
+    externalLink: https://suspicious.games/
+    externalButtonText: Suspicious Games
+  - uid: andor
+    overview: In a collaboration between Suspicious Games, United Soft Media Verlag and Kosmos Verlag, I designed and implemented the missions and new character of the 'Heart of Ice' expansion for the digital version of the hit board game 'Legends of Andor'.
+    externalLink: https://legenden-von-andor.de/die-app/
+    externalButtonText: Andor App
+  - uid: hoversword
+    overview: |-
+      ‘Hoversword’ is the vertical slice to a 3rd person action adventure about high speeds, futuristic boardsports, and an underground dungeon-delving hoverboard scene.
+
+      I worked on this project together with a game/level designer as well as three artists during my 3rd year of university.
+    externalLink: https://eulenmensch.itch.io/hoversword
+    externalButtonText: itch.io
+  - uid: king-art-internship
+    overview: |-
+      As an intern at KING Art Games I worked on the combat and UX design of a pre-production project in direct and frequent communication with the Game Director and Lead Designer.
+
+      This project is currently still under an NDA so what I can show is quite limited. I will add more information when possible.
+    externalLink: https://kingart-games.com/
+    externalButtonText: KING Art Games
+  - uid: nvfps
+    overview: |-
+      A series of prototypes that explore non-violent shooting and the effect of system design as well as game feel on the perception of violence in FPS games.
+
+      Created as a complimentary design project to my bachelor's thesis.
+    externalLink: https://eulenmensch.itch.io/nvfps
+    externalButtonText: itch.io
+  - uid: gush
+    overview: GUSH - currently pink is a sandboxy, physics based waterslide game where your only objective is to get a shiny cube into the jello-filled tank at the end of each level.
+    externalLink: https://gushthegame.itch.io/gush
+    externalButtonText: itch.io
+secondaryProjects:
+  - title: Lightbending
+    genre: Interactive Art Installation
+    overview: "This installation was designed, developed and realized in three weeks.\n\nBy moving adhesive VR\_trackers to any position on the walls, players can influence the flow of particles that are being projected onto the walls and the ground\n\nTwo other players can use VR controllers like paint guns to color in the particles flowing through the space."
+    media: video
+    video: /media/home/lightbending-cut.mp4
+    background:
+      src: /media/home/lightbendingbackground.png
+  - title: Tiny Pump
+    genre: Arcade / Playable Ad
+    overview: "A playable banner advertisement for a fictional cup-ramen product.\n\nPlayers use the sharp end of a physically simulated noodle to slice the ingredients that then fall into the cup.\n\nThe game uses Unity's DOTS\_framework, builds to asm.js as well as WebAssembly and can be played in messengers, ad banners or as a conventional web game (Or in the box to the top)."
+    media: iframe
+    iframe: https://itch.io/embed-upload/1438901?color=f6eed8
+    background:
+      src: /media/home/tinypumpbackground.png
+  - title: Toy-Tied
+    genre: Puzzle / Alternative Controls
+    overview: |-
+      A two-day gamejam game about two plushies tied together with a chinese finger trap.
+
+      The two characters take turns and are moved by hitting the corresponding key on the keyboard, as long as that key is not occupied and also reachable.
+
+      While players can figure out earlier levels in peace, later levels have toy soldiers that fire rockets at the characters.
+    media: video
+    video: /media/home/gameplay003.mp4
+    background:
+      src: /media/home/toytiedillustration.png
+  - title: Parasite
+    genre: Multiplayer / Experimental
+    overview: |-
+      A three-day gamejam game where players collaborate to survive as a parasitic organism.
+
+      Once the parasite's hunger has been satisfied, a player can pass on their game-code to another player to 'reproduce' and continue the chain of parasites.
+
+      The state of the host body including available resources are given along as well, making players think ahead to leave a good game state for the next player in line.
+    media: image
+    image:
+      src: /media/home/parasite-docked-to-an-effect-1.png
+    background:
+      src: /media/home/parasitebackground.png
+contact:
+  callToAction: Get in touch
+  email: yoshua.woo[at]gmail.com
+  linkedin: https://www.linkedin.com/in/yoshua-woo/
+  background:
+    src: /media/home/aboutbackground.jpeg
+specializationsHeading: I particularly like
+toolsHeading: I know how to use

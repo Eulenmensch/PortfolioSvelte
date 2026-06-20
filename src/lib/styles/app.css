@@ -1,0 +1,58 @@
+/* Global tokens + base styles. Inter is self-hosted via @fontsource-variable/inter
+   (imported in +layout.svelte) — no third-party font requests. */
+
+:root {
+	/* palette */
+	--text-color-primary: whitesmoke;
+	--mango-yellow: #ffbb25;
+	--bronze-yellow: #885b00;
+	--kaomaru-blue: #2d2c6d;
+	--mahogany-red: #b53401;
+	--queen-blue: #3f62a4;
+	--sea-green: #219653;
+	--gunmetal-blue: #16202f;
+
+	/* metrics */
+	--border-radius: 1rem;
+	--x-padding: 1.3rem;
+	--box-shadow: 0 0.3rem 3rem rgba(0, 0, 0, 0.6);
+
+	font-family: 'Inter Variable', Inter, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 150%;
+}
+
+/* fluid up-scaling on very large displays (kept from the original) */
+@media only screen and (min-width: 2559px) {
+	:root {
+		font-size: 16px;
+	}
+}
+@media only screen and (min-width: 3839px) {
+	:root {
+		font-size: 24px;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	color: var(--text-color-primary);
+	background-color: var(--gunmetal-blue);
+}
+
+button {
+	all: unset;
+}
+
+a {
+	color: inherit;
+}

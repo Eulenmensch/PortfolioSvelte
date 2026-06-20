@@ -1,0 +1,24 @@
+uid: albion-horizons
+colors:
+  primary: "#000000"
+  text: "#ffffff"
+  highlight: "#D12826"
+header:
+  name: Horizons Update
+  nameGraphic:
+    src: /media/projects/albion-horizons/z4bbojbqstj99sfl-horizons.png
+  subtitle: Dynamic Encampments
+  headerImage:
+    src: /media/projects/albion-horizons/z4bcejbqstj99sfo-beatrice-loading-wip.png
+heroVideo: https://www.youtube.com/embed/_zw91Vj29nc?si=jeVzCO4YdTQ8wvN1
+facts:
+  genre: MMORPG / Sandbox
+  engine: Unity
+  teamSize: 100+
+  duration: 3 Months
+  role: Feature Owner / Balancing
+elevatorPitch: "## **Dynamic Encampments** are new mob camps which spawn in unpredictable locations in the open world for a limited time, offering personal rewards for those who complete them. At the same time, **Dynamic Resource Hotspots** are springing up with abundant gathering possibilities."
+secondaryVideo:
+  url: https://www.youtube.com/watch?v=b3-RPbbIlHg
+  descriptor: one of our biggest content creators, Equart, exploring the update with other content creators
+sections: []

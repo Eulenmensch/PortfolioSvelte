@@ -1,0 +1,111 @@
+uid: hoversword
+colors:
+  primary: "#0f1926"
+  text: "#ffffff"
+  highlight: "#ebcd21"
+header:
+  name: Hoversword
+  nameGraphic:
+    src: /media/projects/hoversword/hoversword.svg
+  headerImage:
+    src: /media/projects/hoversword/08-downsized-p-1080.png
+    alt: A futuristic skater on a hoverboard prepares to jump over a laser barrier. Bright rays converge as the hoverboard charges up an upwards thrust.
+heroVideo: https://www.youtube.com/embed/HP-GeZLaELo
+facts:
+  genre: Action-Adventure / Racing
+  engine: Unity
+  teamSize: "5"
+  duration: 5 Months
+  role: 3Cs / Vehicle Design / Programming
+elevatorPitch: "## **‘Hoversword’ is the vertical slice to a 3rd person action adventure about high speeds, futuristic boardsports, and an underground dungeon-delving hoverboard scene.**"
+secondaryVideo:
+  url: https://youtu.be/xC5wOSgp1-w
+  descriptor: a playthrough of the prototype
+responsibilities: |-
+  My main responsibility was to design, implement and polish the **character controller**. While I had many other tasks throughout the project, I spent the most amount of time on creating the **flowy, hovering board controls**.
+
+  I took a lot of inspiration from downhill longboarding, snowboarding and kitesurfing to get a good mix of breakneck speeds, masterful board control and aerial tricks. To implement board behavior I frequently looked to real world physics of boardsports as well as aviation.
+sections:
+  - type: paragraphImage
+    heading: Prototyping
+    body: |-
+      As the game revolves around the hovering character controller, I had to quickly find a working approach to the hover-like movement at it’s core.
+
+      With little prior experience in vehicle design I researched how other boardsports games as well as racing games (especially anti-grav) design and implement their movement systems. Using the gathered information as well as my experience with the engine and PhysX, I collected several approaches to prototype and test:
+
+      - rolling sphere with interpolated board height to fake hovering
+      - invisible wheels with suspension
+      - physical thrusters in different configurations
+      - custom movement code, moving the root transform manually based on player input
+
+      I then evaluated them based on controllability, implementation complexity and how close they could get to my vision of the hoversword in terms of game feel.
+    items:
+      - image:
+          src: /media/projects/hoversword/engine-screenshot-cropped.png
+        description: First iteration of physical thrusters which stood out as the most fun among the team and testers.
+  - type: paragraphImage
+    heading: Tuning for Stability
+    body: |-
+      Although it was more complex to implement, I chose to use physics based thrusters for the board. This approach was immediately fun to interact with and showed great potential in terms of game feel.
+
+      To get the board to stabilize I looked at physics engine tricks that other games implement as well as real life physics and robotics.
+
+      I finally got the board to a reasonably stable state by
+
+      - offsetting the center of gravity, massively increasing the pitch/roll stability as well as making the board always return to an upright position
+      - making use of PID controllers, a massively popular controller type used in robotics. Using a control feedback loop, these controllers can be finetuned to create smooth, predictable motions.
+      - implementing custom drag functionality to dynamically fine tune handling at specific speeds as well as get accurate information about values such as terminal velocity
+      - using thrusters to tilt/roll the board to steer instead of changing yaw angle directly. This helps cornering stability as well as traction and makes the steering feel much more responsive.
+    items:
+      - image:
+          src: /media/projects/hoversword/board-controller-research.png
+        description: 2 Semesters of engineering were good for something after all
+  - type: videoSection
+    items:
+      - title: PID controller hover-feel pass
+        url: https://www.youtube.com/embed/2xMDi0GZXUI
+        description: For this iteration, I focused on balancing controllability with sense of speed and getting the steering to feel more ‘surfey’.
+      - title: PID controller linear level pass
+        url: https://www.youtube.com/embed/ScHN8gj9Ojs
+        description: Here, I made the controls work properly with the levels and surfaces the level designer had created. Sadly, some hover-like feel was lost in this iteration.
+  - type: paragraphImage
+    heading: Tuning for Fun
+    body: |-
+      While working with the level designer to create good pacing, interesting obstacles and a game world that would be fun to move through, I constantly tweaked the variables of the controller to uphold the game feel I envisioned.
+
+      My goal was to create a movement that feels like hovering in mid air while keeping controls tight and responsive as well as enabling twitch input-corrections at high speeds.
+
+      Having learned from all prior iterations, for the final movement tuning I
+
+      - purposefully used conventionally undesirable PID tuning values to create a more elastic, hover-like handling.
+      - introduced additional sensors around the board to assist the player ride smooth lines through our levels
+      - disabled certain assists when airborne to allow for more player expression as well as aerobatic maneuvers such as loops
+      - implemented animations from our animator and added an extensive IK system on top to give feedback to user input and player state
+      - worked with the VFX Artist to create particle effects that increase the feeling of power and speed
+    items:
+      - videoEmbed: https://youtu.be/d9N0UEEuL0w
+  - type: videoSection
+    items:
+      - title: PID controller final pass
+        url: https://www.youtube.com/embed/FzZxrYXZgTg
+        description: "**My debugging scene with the most important debugging gizmos enabled. Among others you can see color-indicators of how much force is being applied, the dynamic camera-target, and the IK-Rig.**"
+  - type: gallery
+    images:
+      - src: /media/projects/hoversword/lernjournal-abilities-and-tubes.jpg
+        caption: Early design explorations and observations from testing
+      - src: /media/projects/hoversword/lernjournal-initial-design-thoughts.jpg
+        caption: The initial high concept design I pitched to my team
+      - src: /media/projects/hoversword/game-feel-ideation.png
+        caption: The game feel I wanted to evoke for different areas of the game
+      - src: /media/projects/hoversword/lernjournal-energy-system.jpg
+        caption: Flow chart for a energy system that pushes players towards risk-taking
+      - src: /media/projects/hoversword/speed-as-currency.png
+        caption: The final iteration of the player's energy/health system
+      - src: /media/projects/hoversword/lernjournal-pacing.jpg
+        caption: My thoughts on an ideal intensity curve for an average play session
+      - src: /media/projects/hoversword/speed-system-design.png
+        caption: To communicate with my team during the pandemic, I used miro as a central source of knowledge. Here we discussed the energy/health system I designed
+      - src: /media/projects/hoversword/board-controller-research.png
+        caption: I kept a digital whiteboard for the physics that drive the hover behaviour
+      - src: /media/projects/hoversword/engine-screenshot-cropped.png
+        caption: From the get go, I created gizmos to visualize information that was critical for tuning

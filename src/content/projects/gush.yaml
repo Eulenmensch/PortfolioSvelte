@@ -1,0 +1,103 @@
+uid: gush
+colors:
+  primary: "#460c1d"
+  text: "#f3dfe3"
+  highlight: "#5eda82"
+header:
+  name: "GUSH:"
+  nameGraphic:
+    src: /media/projects/gush/gush.png
+  subtitle: currently pink
+  headerImage:
+    src: /media/projects/gush/bandicam-2019-03-05-14-18-28-134.png
+heroVideo: https://www.youtube.com/embed/b61jFY8Ec0c
+facts:
+  genre: Physics-Sandbox / Waterslide
+  engine: Unity3D
+  teamSize: "4"
+  duration: 5 Months
+  role: Gameplay / Systems / UX / Level Design
+elevatorPitch: "## **A sandboxy, physics based waterslide game where your only objective is to get a shiny cube into the jello-filled tank at the end of each level.**"
+secondaryVideo:
+  url: https://www.youtube.com/watch?v=G4pPEIvkAl0
+  descriptor: a playthrough of the level I designed for the game
+responsibilities: |-
+  During the development of GUSH I was mainly responsible for designing and prototyping the game systems and UX.
+
+  I prototyped the initial core mechanics and later explored different approaches to making interesting challenges and levels for the existing systems.
+sections:
+  - type: paragraphImage
+    heading: Rapid Prototyping
+    body: |-
+      To maximize the time efficiency of our time-budget, the lead programmer and I both produced several prototypes within the first week to quickly weed out ideas that either showed no promise or were too time consuming to pursue.
+
+      In advance, the team had workshopped a set of player fantasies of which each prototype was to fulfill at least one.
+
+      My final prototype was about building connections to reach remote places/landmarks. I made a mechanic where the player could shoot sticky rigidbodies that would stiffen, expand and lock in place on contact, similar to spray foam.
+
+      Although it was originally meant to allow players to build structures like ramps and bridges to create their own path through each level, testers found it much more fun simply covering every surface and object they could find with projectiles as well as building random shapes.
+    items:
+      - image:
+          src: /media/projects/gush/shoot-move.png
+      - image:
+          src: /media/projects/gush/digitalproto01.jpg
+  - type: paragraphImage
+    heading: Game System Design
+    body: |-
+      With playtesters having a lot of fun with the prototype as it was, I decided to lean into what was already fun instead of trying to entice players to conform to the originally intended gameplay.
+
+      My challenge was then to design a game system where the existing gameplay mechanic would slot in naturally.
+
+      I looked at existing forms of play that included free-form building such as Lego, FischerTechnik as well as arts and crafts for reference.
+
+      Building on the research, I introduced several secondary mechanics:
+
+      - different projectiles with unique qualities for a more creative building process
+      - physics parameters such as weight and buoyancy that each projectile could have to varying degrees
+      - water and air currents as a means of providing context to the projectiles and their physics-based qualities
+      - a singular rigidbody that the projectiles could be attached to before letting it drop into the level and starting the physics simulation
+
+      These mechanics also helped define the game's goal:
+
+      **Make the rigidbody float and fly through a level and reach the goal at the end.**
+    items:
+      - image:
+          src: /media/projects/gush/analogueproto01-cropped.jpg
+        description: "**I used toys and building blocks to test different ideas I had floating around my head**"
+      - description: "**A time lapse of the development of the core mechanics**"
+        videoEmbed: https://www.youtube.com/watch?v=xH7dObAFf4U
+  - type: paragraphImage
+    heading: Improving Control
+    body: |-
+      During development, I realized that the players had a hard time controlling where the rigidbody was headed as the water and air currents were the only way to move it through the levels.
+
+      This made it pretty difficult to author levels that wouldn't force the player into one rigid solution when a major design goal was to allow player expression and creative solutions.
+
+      To fix this problem, I added foam darts. These darts would give a small nudge to the rigidbody itself but also made any already attached projectile explode. Each explosion then added another slightly bigger impulse to the rigidbody.
+
+      By adding the darts, the player now had an engaging action to perform while getting the rigidbody to float through the level and could make corrections to its trajectory giving them a much better sense of control.
+
+      Additionally, allowing players to apply physics projectiles on the go added the final touch to grant players the intended freedom to create their own solutions.
+    items:
+      - image:
+          src: /media/projects/gush/darts.png
+  - type: gallery
+    images:
+      - src: /media/projects/gush/systemgraphs.png
+        caption: High-level system graph for final implementation
+      - src: /media/projects/gush/work08.jpg
+        caption: I was in charge of most internal presentations
+      - src: /media/projects/gush/img-0654.jpg
+        caption: An early ideation that fueled our prototyping phase
+      - src: /media/projects/gush/teamwork01.jpg
+        caption: A late-night team meeting I was facilitating
+      - src: /media/projects/gush/wall01compressed.jpg
+        caption: We lined our office walls with concept art, documentation and a kanban board as a central source of project planning
+      - src: /media/projects/gush/production01.png
+        caption: Early in development I experimented with stiff projectiles that allowed players to alter the shape of the object. I cut it as it didn't add enough to the gameplay
+      - src: /media/projects/gush/vfx01.png
+        caption: I used the experimental  VFX graph to create water splashes
+      - src: /media/projects/gush/unity01-cropped.png
+        caption: An early level design to test obstacle placement and variable water speeds
+      - src: /media/projects/gush/amaze02.jpg
+        caption: Our stand at AMAZE 2018

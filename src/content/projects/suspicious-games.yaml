@@ -1,0 +1,96 @@
+uid: suspicious-games
+colors:
+  primary: "#2C3634"
+  text: "#F2F3ED"
+  highlight: "#DE9D28"
+header:
+  name: Project 'Waldkauz'
+  nameGraphic:
+    src: /media/projects/suspicious-games/65d258519be9a5b998b5fa22-title02.svg
+  headerImage:
+    src: /media/projects/suspicious-games/zfwqc8muzjad-taq-titlescreen.png
+facts:
+  genre: Turn-Based Tactics / Deckbuilding
+  engine: Unity
+  teamSize: "6"
+  duration: 1 year (Feb '23 - Mar '24)
+  role: Game Designer
+responsibilities: |-
+  As the only game designer for this turn-based tactics game project, I played a pivotal role in shaping its vision and direction. From refining the initial concept to creating prototypes and documenting features, I provided clear direction and guidance to the development team. 
+
+  My responsibilities encompassed everything from system design and gameplay mechanics to UI/UX refinement, ensuring a cohesive and engaging player experience.
+sections:
+  - type: paragraphImage
+    heading: Finding an Enjoyable Core-Loop
+    body: |-
+      My involvement in the turn-based tactics game project extended beyond conceptualization and planning to hands-on implementation and iteration. I took the lead in designing and prototyping various game features, including combat mechanics, character abilities, and level layouts. 
+
+      Through rapid prototyping and iterative design processes, I was able to explore different ideas and refine gameplay mechanics to find the optimal balance between depth and accessibility. This iterative approach allowed us to uncover and address design flaws early in development, saving time and resources in the long run. 
+
+      By incorporating feedback from playtesting sessions and internal reviews, I continuously improved upon our prototypes, ensuring that each iteration brought us closer to our vision for the game. This commitment to iteration and refinement was instrumental in shaping enjoyable gameplay experience.
+    items:
+      - image:
+          src: /media/projects/suspicious-games/65cf3d929be9a5b998b5ebb2-screenshot2023-11-22120107.png
+          alt: Screencap of a playtesting session showing the webcam view of a dry erase mat featuring a level layout and dice
+      - image:
+          src: /media/projects/suspicious-games/65cf7a5e9be9a5b998b5f067-image.png
+          alt: Screencap of a playtesting session showing the webcam view of a notebook mat featuring a level layout and dice
+  - type: paragraphImage
+    heading: Documentation and Systems
+    body: |-
+      I took on the responsibility of creating and maintaining comprehensive documentation for the features and systems of our turn-based tactics prototype. This involved meticulously outlining every aspect of the game mechanics, features, and design guidelines to ensure clarity and direction for the development team. 
+
+      Additionally, I crafted detailed system architectures and diagrams to provide a visual representation of the game's structure, facilitating efficient implementation and helping to uphold a shared vision within the team.
+
+      Through this process, I played a pivotal role in shaping the foundational framework of the prototype. By ensuring systemic cohesion and synergistic gameplay mechanics, I aimed to create an experience that flowed seamlessly for players, immersing them in the tactical challenges of the game world.
+
+      This dedication to clarity, efficiency, and cohesive design was vital in guiding the development process and ultimately delivering an engaging prototype.
+    items:
+      - image:
+          src: /media/projects/suspicious-games/65d243799be9a5b998b5f9bb-screenshot2024-02-18184850.png
+      - image:
+          src: /media/projects/suspicious-games/65d243949be9a5b998b5f9bc-screenshot2024-02-18184956.png
+  - type: paragraphImage
+    heading: Digital Implementation
+    body: |-
+      To bring our vision to life, I translated the paper prototype into a digital format. 
+
+      I blocked out the level while adjusting it to behave as intended with our existing systems such as line of sight or our cell-based navmesh. While determining ideal unit placement and movment ranges, I set up the card and their abilities to match the encounter's dimensions.
+
+      Once I could be sure that the encounter funtioned smoothly during testing, I fine-tuned the encounter, units, and cards, and overall balance to ensure an engaging and challenging gameplay experience. Iteratively refining player-facing features like the HUD, card-play, and controls, I prioritized intuitive and natural interactions in a digital environment, focusing on readability and tactile feedback.
+
+      While we are still giving the prototype a final finishing pass before uploading a demo to itch.io, the existing digital prototype captures the engaging essence of our paper prototype and clearly showes the game's potential. 
+
+      Once the build has been uploaded to itch.io, I will update this page with a link.
+    items:
+      - image:
+          src: /media/projects/suspicious-games/zfwsgsmuzjad-tav-prototype01.png
+          alt: Ingame screenshot of a top-down tactics game featuring characters and game UI.
+  - type: gallery
+    images:
+      - src: /media/projects/suspicious-games/65cf36f89be9a5b998b5eb22-in-gamescreenshot01.png
+        alt: a broad shouldered woman with a battleaxe stands in a greybox level
+        caption: A screenshot from the current encounter blockout.
+      - src: /media/projects/suspicious-games/65d243799be9a5b998b5f9bb-screenshot2024-02-18184850.png
+        alt: A screenshot of a design document on how cards should be played. Apart from design goals and implementation details, it includes a video showcasing the desired result.
+        caption: I introduced a wiki format that was at max 2 levels deep to prevent having to dig through subfolder after subfolder just to get to one piece of information.
+      - src: /media/projects/suspicious-games/65cf7a5e9be9a5b998b5f067-image.png
+        alt: A notebook with a level layout, dice and playing cards.
+        caption: As we worked fully remotely, I had a camera mounted to face my desk. That way I could easily hold playtesting sessions of paper prototypes with internal and external testers.
+      - src: /media/projects/suspicious-games/65d243949be9a5b998b5f9bc-screenshot2024-02-18184956.png
+        alt: Screenshot of a digital whiteboard filled with content.
+        caption: I extensively used miro to create flowcharts and diagrams as well as collect visual information. I also used it to prototype level layouts and iterate on the card decks.
+      - src: /media/projects/suspicious-games/65ce38189be9a5b998b5e0cb-turnui.png
+        alt: A blocky game prototype showing capsules and some UI elements.
+        caption: An earlier stage of the prototype while I was testing UI layouts.
+      - src: /media/projects/suspicious-games/65d253ca9be9a5b998b5fa14-2023-12-20levelprototyping.png
+        alt: An in-engine screenshot of a game prototype. A green navmesh is overlayed on top of a 3D level blockout.
+        caption: Once I had verified the encounter design using paper prototyping, I went ahead and implemented it in Unity. Here you can see me adjusting slopes to work with our pathfinding systems.
+      - src: /media/projects/suspicious-games/65d254169be9a5b998b5fa16-pp-cards-01.jpg
+        alt: Several dice and prototypical playing cards.
+        caption: To quickly iterate card design and deck composition, I stuck post-its onto my magic cards and used dice to track values such as unit HP or buff durations.
+      - src: /media/projects/suspicious-games/zfwxrcmuzjad-tbv-prototype03.png
+        alt: Ingame screenshot of a character aiming an ability
+        caption: By utilising stencil buffers we were able to ensure that ability range visuals could match spherical bounds even on uneven terrain.
+      - src: /media/projects/suspicious-games/zfwyecmuzjad-tba-prototype05.png
+        alt: Ingame screenshot of a character using a healing ability

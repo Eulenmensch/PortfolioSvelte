@@ -1,0 +1,112 @@
+uid: nvfps
+colors:
+  primary: "#3a1926"
+  text: "#ffffff"
+  highlight: "#63faff"
+header:
+  name: Non-Violent FPS
+  nameGraphic:
+    src: /media/projects/nvfps/nvfps.svg
+  subtitle: Bachelor's Thesis
+  headerImage:
+    src: /media/projects/nvfps/screenshot-08-grappler-chase-1600x900.png
+heroVideo: https://www.youtube.com/embed/rMMEmDwaF6Y
+facts:
+  genre: First Person Shooter / Wholesome
+  engine: Unity3D
+  teamSize: "1"
+  duration: 7 Months
+  role: Solo Dev
+elevatorPitch: "## **A series of prototypes that explore non-violent shooting and the effect of system design as well as game feel on the perception of violence in FPS\_games.**"
+secondaryVideo:
+  url: https://youtu.be/voJrjVbfPKE
+  descriptor: gameplay from the final proof of concept
+responsibilities: |-
+  Game Design, Programming, Art and Production were all done by me as this is my final project as well as bachelor's thesis from university.
+
+  My research focus was the feeling of violence in FPS games and what effect system design, player feedback and gameplay have on it. The final output was a series of prototypes in which I explored non-violent shooting.
+sections:
+  - type: paragraphImage
+    heading: Playtests & Insights
+    body: |-
+      After having worked on several quick prototypes I had gotten to a point where I needed some solid data as well as feedback from playtesting.
+
+      I wanted to see how violent different shooting interactions would feel with different NPC reactions as well as different gun-feel parameters such as recoil, particle effects and sound effects.
+
+      NPCs would get shot one after the other with increasingly positive reactions to getting shot. While the first NPC would get flung around and express their anguish, the final two would explicitly ask to get shot and then thank the player for shooting them.
+
+      After evaluating the results, I now had data to confirm some of my prior observations as well as some newfound understanding of what makes shooting in games (or at least my game) feel violent:
+
+      - Explicit violence always feels violent
+      - Explicit consent makes shooting feel much less violent
+      - Auditive feedback has a much bigger impact on perceived violence than visual feedback
+      - Outcome or reaction of the NPC that was shot has a much bigger impact on perceived violence than gun-feel
+      - Shooting has an inherent violent quality to it
+    items:
+      - image:
+          src: /media/projects/nvfps/screenshot-03-npc-ouch-1600x900.png
+          alt: a geometric figure with a speech bubble. It says "ouch! that wasn't very nice!"
+        description: "**An NPC that complains about getting shot by the player. The player can choose to either apologize or further belittle them.**"
+      - image:
+          src: /media/projects/nvfps/screenshot-2021-02-15-043908.png
+          alt: A bar diagram of perceived violence resulting from a playtest
+        description: "**Evaluation of the playtest. Testers had to rate how violent they felt when shooting each NPC on a scale from 0 to 10.**"
+  - type: paragraphImage
+    heading: Player Controller & Game Feel
+    body: |-
+      While I had gunplay that felt virtually non-violent, an inherently present violence remained in the sole fact that players where still pointing and shooting a gun at NPCs/ virtual beings.
+
+      As game feel is often a product of many systems and layers stacked on top of each other, I set out to obscure that remaining violence by adding child-like and traditionally non-violent elements on top.
+
+      One thing that stuck out to me was how soap bubbles technically are projectiles but are always used in a joyful and playful context. Enclosing NPCs in bubbles also felt much more protective than violent.
+
+      So far, the movement and gun placement on screen where quite stiff and static which came with a clinical, unlively feeling. To alleviate that I made an IK-rig for a noodley arm that would slightly lag behind the crosshair and create a bouncy, snappy, more playful movement. This also required tight tuning to not feel sluggish or imprecise.
+
+      I then used edited mouth noises for auditive feedback as they sound soft and non-threatening while still providing a juicy and satisfying 'pop'.
+    items:
+      - description: "**Iterations of the gunplay throughout the prototypes**"
+        videoEmbed: https://www.youtube.com/watch?v=XefgCyRnz10
+      - image:
+          src: /media/projects/nvfps/screenshot-11-rescue-1600x900.png
+        description: "**One of the prototypes where the player has to rescue NPCs from a rising slime ocean by shooting them with soap bubbles**"
+  - type: paragraphImage
+    heading: NPCs & Enemies
+    body: |-
+      I wanted players to shoot NPCs which meant that I would need some form of AI. To be able to quickly create new NPCs as I needed them, I made a modular finite state machine system.
+
+      Individual behaviors, state change conditions as well as enter-/exit actions could be written as short, decoupled, single responsibility script assets that I could combine as I saw fit in the editor to create state assets.
+
+      These state assets could then be assembled and wired in the editor to create a large variety of state machines.
+
+      Later when I wanted to test how antagonistic NPCs would impact the players' perception of violence this allowed me to easily put together an enemy type that chases and tries to grapple the player on sight.
+    items:
+      - image:
+          src: /media/projects/nvfps/grappler.png
+          alt: A ball shaped character with a big red nose, big red gloves and grey sneakers.
+  - type: paragraphImage
+    heading: Vertical Slice
+    body: Finally, I created a vertical slice level with two small encounters, an NPC that gives a quest and some light puzzle elements. This was to show that the results from my research could actually be translated into a short, playable level.
+    items:
+      - image:
+          src: /media/projects/nvfps/elephant-level.png
+          alt: A level featuring grassy, rocky terrain and a lake. The shapes are stylized and simplified.
+  - type: gallery
+    images:
+      - src: /media/projects/nvfps/dsc04210.jpg
+        caption: I extensively used miro, an online whiteboarding tool.
+      - src: /media/projects/nvfps/dsc04211.jpg
+        caption: A state machine flow for an NPC that chases the player.
+      - src: /media/projects/nvfps/screenshot-dev-07-enemy-view-cones.png
+        caption: Debugging gizmos for NPC viewcones
+      - src: /media/projects/nvfps/screenshot-dev-08-projectile-motion-prediction.png
+        caption: Debugging gizmos for a deterministic trajectory calculation for a turret-like enemy.
+      - src: /media/projects/nvfps/analogue-prototyping.jpg
+        caption: I like to use analog prototyping tools for quick ideation and rapid prototyping.
+      - src: /media/projects/nvfps/arms-anim.png
+        caption: I created a tool to programmatically animate the player character's hands along paths.
+      - src: /media/projects/nvfps/screenshot-03-npc-ouch-1600x900.png
+        caption: One of the first things I did was implement a dialogue system and UI to create emotional feedback to shooting NPCs.
+      - src: /media/projects/nvfps/screenshot-dev-01-balloons.png
+        caption: Early on, I experimented with balloons and other physics projectiles that would stick to whatever they hit.
+      - src: /media/projects/nvfps/screenshot-2021-02-15-043908.png
+        caption: The playtesting results of a test setup where players shot NPCs that would react differently when shot. I also evaluated gun feedback and its impact on perceived violence.

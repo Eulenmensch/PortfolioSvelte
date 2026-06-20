@@ -1,0 +1,13 @@
+heading: About Me
+body: |-
+  Hi, my name is Yoshua and I'm currently the game designer at [Sandbox Interactive](https://albiononline.com/).
+
+  Making games over the years, I found that I have a particular love for making player controls feel great to interact with, no matter if it's real time or turn based and top-down.
+
+  I'm fascinated with gameplay and combat systems and have spent a lot of time creating, testing and iterating them.
+
+  I enjoy being surrounded by like-minded people, easily get along with almost anyone and generally work best in teams. I love learning and keeping up with new developments in games and tech and always have a project on the side where I can test and try out new things. At the moment, I'm building a web-app for my Dungeons and Dragons campaign.
+
+  When I'm not working on games, I'm an avid tabletop game master, amateur musician, home cook and like to go swim in nature.
+backgroundImage:
+  src: /media/home/aboutbackground.jpeg

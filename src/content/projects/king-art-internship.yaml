@@ -1,0 +1,62 @@
+uid: king-art-internship
+colors:
+  primary: "#151b30"
+  text: "#ffffff"
+  highlight: "#ffb310"
+header:
+  name: KING Art Games
+  subtitle: Internship
+  headerImage:
+    src: /media/projects/king-art-internship/desk-with-ux-research-blurred.jpg
+facts:
+  genre: Turn-Based Tactics / 4X Strategy
+  engine: Unity3D
+  teamSize: "9"
+  duration: 6 Months
+  role: Game Design Intern
+responsibilities: |-
+  As part of my studies, I completed an internship in game design at KING Art Games. Working with a prototype during pre-production, I helped bring the combat system to an MVP state and created a framework as well as an interactive prototype for the UX and UI of the turn-based combat encounters of the game.
+
+  Since the game is yet to be announced, I can only share a small insight into the work I did during my time at KING Art Games but I will update the page once I can do so.
+sections:
+  - type: paragraphImage
+    heading: Prototyping
+    body: |-
+      When I joined the project, a combat prototype in Unity already existed. However, my Lead pointed out that playtesters had trouble controlling their units and finding the information necessary to make strategic decisions.
+
+      As the turn-based encounters were meant to take up a large portion of the game, my first task was to identify shortcomings with the existing systems' readability, focusing on the onboarding experience.
+
+      To do so, I played and analyzed several turn-based-tactics games to see what I could learn from their design as well as where they fell short to avoid possible pitfalls.
+
+      As making changes to the digital prototype was quite time-consuming, I opted for analog prototyping which allowed me to rapidly test different scenarios.
+
+      Later, it also enabled me to quickly prototype random encounter generation using polyhedral dice.
+
+      On the side, I would periodically test my results in the digital prototype to adjust for difference in game feel between digital and analog.
+    items:
+      - image:
+          src: /media/projects/king-art-internship/analogue-prototype-blurred.jpg
+          alt: A blurred image of a notebook and boardgame pieces on graph paper
+  - type: paragraphImage
+    heading: "UX\_Research"
+    body: |-
+      Before the internship, I had done encounter design for my Dungeons & Dragons home game and played a handful of games in the tactics and strategy genres, but I had limited experience working on them.
+
+      So instead of going in blind, I went through reviews, game store pages, and forums of other turn-based tactics games to find out which games and features where being praised and what pain points and complaints players of those games had.
+
+      I also looked at popular mods to see what the playerbase was missing from the base game experience.
+
+      Based on the findings of my research, I then constructed a player persona and assigned them a player type based on quantic foundry’s high-level clusters as well as Jason VandenBerghe’s 5 Domains of Play.
+
+      My team and I were able to use these resources to accelerate work on the prototype as we could avoid common mistakes without having to implement and test them first.
+    items:
+      - image:
+          src: /media/projects/king-art-internship/desk-with-ux-research-blurred.jpg
+          alt: A blurred image of two computer screens and handwritten notes in the foreground
+  - type: paragraphImage
+    heading: "UI\_Prototype"
+    body: "During the last two and a half months of the internship, I designed and prototyped the UI and UX\_for the turn-based combat. I used Illustrator and Blender to create mock-ups and place holder assets which I then used to make a fully interactive Adobe XD\_document.\nUnfortunately, I can't show any assets that I produced, which includes said prototype. Once I can, I will update this page with screenshots and more information."
+    items:
+      - image:
+          src: /media/projects/king-art-internship/ui-mockup-blender-blurred.jpg
+          alt: A blurred image of a 3D software and visual references

@@ -1,0 +1,75 @@
+uid: andor
+colors:
+  primary: "#303336"
+  text: "#FFFFFF"
+  highlight: "#C1E8E8"
+header:
+  name: Legends of Andor DLC
+  headerImage:
+    src: /media/projects/andor/65cf3aee9be9a5b998b5eb71-herz-aus-eis-cover.webp
+heroVideo: https://www.youtube.com/embed/9xZ-DQcZGsA
+facts:
+  genre: Digital Boardgame
+  engine: Unity
+  teamSize: "6"
+  duration: 7 Months (Feb - Sep '23)
+  role: Game Designer / Writer
+elevatorPitch: "## In the brand-new expansion ‘Heart of Ice’, another icy threat now awaits the players: together with the fire warrior Trieest, they have to protect the land of Andor from a frosty danger in three challenging legends."
+secondaryVideo:
+  url: https://youtu.be/2Ul4H6JXDDY?si=iI45TBoQVv76ONvx
+  descriptor: a German let's play of the game after we took over development
+responsibilities: At the forefront of the design for the mobile app expansion of Andor, I created new content and ensured its seamless integration, collaborating cross-functionally to maintain quality. Utilizing data from external playtesting, I iteratively refined design elements to enhance the user experience.
+sections:
+  - type: paragraphImage
+    heading: Mission Design
+    body: |-
+      As the designer behind the expansion for the mobile app version of the board game Andor, I spearheaded the creation of new content to enrich the gaming experience for players. 
+
+      Drawing inspiration from the game's existing universe and mechanics, I conceptualized and implemented additional levels, characters, and gameplay features that seamlessly integrated with the core game. 
+
+      By continously testing and iterating my designs, I introduced fresh challenges and opportunities for exploration, expanding the game's replay value and appeal to both new and existing players. 
+
+      Through collaboration with artists, programmers, and the publisher, I ensured that the expansion content maintained the same high quality and polish as the base game, delivering a cohesive and immersive experience for players to enjoy.
+    items:
+      - image:
+          src: /media/projects/andor/65cf57ee9be9a5b998b5ed5d-legendenvis.png
+          alt: A slide showing part of a mission and possible movement actions in the board game Legends of Andor
+        description: To clearly communicate mission design, I created step by step documents, showcasing the narrative and structure accompanied by notes, player options and possible play patterns.
+  - type: paragraphImage
+    heading: The Fire Warrior
+    body: |-
+      The new addition to the cast of characters was conceived to bring a fresh dynamic to the Andor universe while staying true to the game's lore and mechanics. 
+
+      By carefully balancing its abilities and ensuring its integration into existing gameplay systems, the Fire Warrior seamlessly complemented the diverse cast of characters in the game. 
+
+      This dynamic character possessed the unique ability to burn resources to temporarily enhance their strength, adding a strategic element to gameplay. 
+
+      The Fire Warrior received praise from both the audience and the original author of the board game, underscoring its successful integration into the Andor franchise.
+    items:
+      - image:
+          src: /media/projects/andor/65cf8c489be9a5b998b5f16a-andor-held-figur-feuerkrieger-front-01-04.png
+  - type: paragraphImage
+    heading: Community Feedback
+    body: |-
+      Following the release of the expansion for the mobile app version of Andor, I was thrilled to see veteran players praising the new missions in online forums. 
+
+      Players lauded the expansion content as "even better" than the base game, citing its engaging narratives, challenging missions, and overall polish. 
+
+      Their positive feedback not only validated the hard work and attention to detail that went into crafting the expansion but also served as a testament to its impact on the player community. 
+
+      By listening to player feedback and incorporating it into the design process, I was able to create missions that resonated with players and enhanced their enjoyment of the Andor experience on mobile platforms.
+    items:
+      - image:
+          src: /media/projects/andor/65cf8a349be9a5b998b5f154-forumpost.png
+          alt: A forum entry in German praising the missions and new playable character
+        description: This German forum entry by an avid player of the base game praised the missions as well as the new character for being an improvement to an already enjoyable product. Find the post [here](https://legenden-von-andor.de/forum/viewtopic.php?f=21&t=9469).
+  - type: gallery
+    images:
+      - src: /media/projects/andor/65cf8a349be9a5b998b5f154-forumpost.png
+        caption: Closeup of the forum post
+      - src: /media/projects/andor/65cf57ee9be9a5b998b5ed5d-legendenvis.png
+        caption: Closeup of one of the slides I used to communicate my mission designs
+      - src: /media/projects/andor/65cf3aee9be9a5b998b5eb71-herz-aus-eis-cover.webp
+        caption: The official artwork for the expansion
+      - src: /media/projects/andor/65cf925b9be9a5b998b5f1cc-andor01.png
+        alt: In engine shot of the mission editor during development
