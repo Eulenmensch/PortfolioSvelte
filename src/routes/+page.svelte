@@ -8,6 +8,10 @@
 
 	const palette = ['var(--mango-yellow)', 'var(--mahogany-red)', 'var(--queen-blue)'];
 	const accent = (i: number) => palette[i % palette.length];
+
+	// z-index order so the secondary cards' offset shadow-boxes stack correctly
+	// in the 2-column grid (from the original layout).
+	const stackOrder = [8, 9, 6, 7, 4, 5, 2, 3];
 </script>
 
 <svelte:head>
@@ -30,31 +34,59 @@
 		{/each}
 	</section>
 
-	<section class="secondary">
+	<section id="additional-cards" class="secondary">
 		{#each home.secondaryProjects as project, i (project.title)}
-			<SecondaryCard {project} color={accent(i + 1)} />
+			<SecondaryCard {project} color={accent(i + 1)} index={stackOrder[i]} />
 		{/each}
 	</section>
 
-	<Contact contact={home.contact} />
+	<div id="contact-wrap">
+		<Contact contact={home.contact} />
+	</div>
 </div>
 
 <style>
 	.container {
-		max-width: 70rem;
+		display: flex;
+		flex-direction: column;
 		margin: 0 auto;
-		padding: 6rem 2rem 0;
+		padding: 0 0 4rem;
+	}
+
+	.projects {
+		padding: 0 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#additional-cards {
+		position: relative;
+		z-index: 10;
+	}
+
+	@media (min-width: 768px) {
+		.container {
+			margin-top: 20rem;
+			max-width: 70rem;
+		}
+		#additional-cards {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		#contact-wrap {
+			margin: 0 2rem;
+		}
 	}
 
 	@media (min-width: 1024px) {
 		.container {
-			max-width: 90rem;
-			padding-top: 10rem;
+			margin-top: 25rem;
+			max-width: 145rem;
 		}
-		.secondary {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 2rem;
+		#contact-wrap {
+			margin-top: 10rem;
+			margin-bottom: 5rem;
 		}
 	}
 </style>

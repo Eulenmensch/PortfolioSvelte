@@ -60,7 +60,8 @@
 	});
 </script>
 
-<section class="hero">
+<section id="hero">
+	<!-- the intro text only appears on widescreen, as in the original -->
 	<div class="text">
 		{@html md(hero.text)}
 	</div>
@@ -80,55 +81,67 @@
 </section>
 
 <style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-		padding: 9rem 2rem 0;
+	#hero {
+		display: grid;
+		place-items: center;
+		padding: 0 2rem;
 	}
 
+	/* hidden on mobile + tablet (only the headshot shows), like the original */
 	.text {
-		max-width: 40rem;
-	}
-	.text :global(p) {
-		font-size: 1.6rem;
-		font-weight: 300;
-		margin-bottom: 1rem;
-	}
-	.text :global(strong) {
-		font-weight: 800;
+		display: none;
 	}
 
 	.blob {
 		display: grid;
 		place-items: center;
 		width: 100%;
+		margin-top: 30vw;
 	}
 	svg {
-		width: 70vw;
-		max-width: 32rem;
+		max-width: 35rem;
+		width: 100%;
 		aspect-ratio: 1 / 1;
 	}
 
-	@media (min-width: 1024px) {
-		.hero {
-			flex-direction: row-reverse;
-			justify-content: center;
-			align-items: center;
-			gap: 6rem;
-			max-width: 80rem;
-			margin: 0 auto;
-			padding-top: 14rem;
-		}
-		.text {
-			width: 80%;
-		}
-		.text :global(p) {
-			font-size: 1.9rem;
+	@media (min-width: 768px) {
+		.blob {
+			margin-top: 4vw;
 		}
 		svg {
-			width: 32rem;
+			width: 60vw;
+			max-width: 80rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		#hero {
+			display: flex;
+			align-items: center;
+			width: 80rem;
+			max-width: 100%;
+			margin: 20rem auto 0;
+		}
+		.text {
+			display: block;
+			width: 80%;
+			margin-right: 6rem;
+			padding-top: 4rem;
+		}
+		.text :global(p) {
+			margin-bottom: 1rem;
+			font-size: 1.9rem;
+			line-height: 1.5;
+			font-weight: 300;
+		}
+		.text :global(strong) {
+			font-weight: 800;
+		}
+		.blob {
+			margin-top: 0;
+		}
+		svg {
+			width: 38rem;
 		}
 	}
 </style>
