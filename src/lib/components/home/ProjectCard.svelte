@@ -110,6 +110,7 @@
 	@media (min-width: 1024px) {
 		.card {
 			display: flex;
+			justify-content: flex-end;
 			min-height: 43rem;
 			border: none;
 		}
