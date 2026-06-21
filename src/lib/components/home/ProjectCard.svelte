@@ -12,9 +12,19 @@
 	}: { ref: HomeProjectRef; project: Project; color?: string } = $props();
 
 	const bg = $derived(project.header.headerImage?.src);
+
+	// long colour-stepped shadow trail (mobile only; widescreen uses the soft shadow)
+	const shadow = $derived(
+		Array.from({ length: 60 }, (_, i) => `${i * -7.5}px ${i * 5}px 0 ${color}`).join(',')
+	);
 </script>
 
-<article class="card" style:--accent={color} style:--bg={bg ? `url(${bg})` : 'none'}>
+<article
+	class="card"
+	style:--accent={color}
+	style:--bg={bg ? `url(${bg})` : 'none'}
+	style:box-shadow={shadow}
+>
 	{#if project.heroVideo}
 		<div class="media">
 			<EmbedFacade
@@ -57,14 +67,15 @@
 
 <style>
 	.card {
-		margin: 2rem 0 4rem;
+		width: 100%;
+		margin: 2rem 0 6rem;
 		border-radius: calc(var(--border-radius) * 3);
 		overflow: hidden;
 		background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), var(--bg);
 		background-size: cover;
+		background-repeat: no-repeat;
 		background-position: 0% 60%;
-		box-shadow: var(--box-shadow);
-		border: 0.4rem solid var(--accent);
+		border: 0.5rem solid var(--accent);
 	}
 
 	.media {
@@ -113,6 +124,10 @@
 			justify-content: flex-end;
 			min-height: 43rem;
 			border: none;
+			border-radius: calc(var(--border-radius) * 4);
+			box-shadow: var(--box-shadow) !important;
+			/* widescreen: show the image at full brightness; only the text panel is darkened */
+			background-image: var(--bg);
 		}
 		.media {
 			width: 50%;
@@ -123,8 +138,8 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			padding: 2.5rem 3rem 3rem 4rem;
-			background-color: rgba(0, 0, 0, 0.85);
+			padding: 2.5rem 3rem 3rem 5rem;
+			background-color: rgba(0, 0, 0, 0.9);
 		}
 		.title-graphic {
 			height: 5rem;

@@ -62,6 +62,7 @@
 
 <style>
 	menu {
+		/* mobile: fixed so the icon stays reachable while scrolling */
 		position: fixed;
 		left: 0;
 		top: 0;
@@ -71,7 +72,7 @@
 	}
 
 	#icon {
-		position: fixed;
+		position: absolute;
 		width: 3.5rem;
 		aspect-ratio: 1 / 1;
 		top: 1rem;
@@ -133,9 +134,14 @@
 	}
 
 	@media (min-width: 1024px) {
+		/* desktop: the menu (and its icon) scroll away with the page… */
+		menu {
+			position: absolute;
+		}
 		#icon:hover {
 			filter: drop-shadow(0 0 8px rgba(255, 187, 37, 1));
 		}
+		/* …while the nav stays pinned to the top */
 		#widescreen-nav {
 			display: block;
 			position: fixed;

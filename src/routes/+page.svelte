@@ -74,19 +74,12 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 		}
-		#contact-wrap {
-			margin: 0 2rem;
-		}
 	}
 
 	@media (min-width: 1024px) {
 		.container {
 			margin-top: 25rem;
 			max-width: 145rem;
-		}
-		#contact-wrap {
-			margin-top: 10rem;
-			margin-bottom: 5rem;
 		}
 	}
 </style>

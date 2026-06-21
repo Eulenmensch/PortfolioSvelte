@@ -48,7 +48,8 @@
 <style>
 	.contact {
 		position: relative;
-		margin: 6rem 0 0;
+		z-index: 20;
+		margin: 6rem 2rem 0;
 		display: flex;
 		flex-direction: column;
 		border-radius: calc(var(--border-radius) * 3);
@@ -136,9 +137,19 @@
 		font-weight: 900;
 	}
 
+	@media (min-width: 768px) {
+		.contact {
+			/* capped slightly narrower than the project sections, and centred */
+			max-width: 66rem;
+			margin: 6rem auto 0;
+		}
+	}
+
 	@media (min-width: 1024px) {
 		.contact {
 			flex-direction: row;
+			max-width: 141rem;
+			margin: 10rem auto 5rem;
 		}
 		.cta,
 		form {
