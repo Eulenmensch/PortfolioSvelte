@@ -111,3 +111,48 @@ export interface Resume {
 	pdf?: string;
 	link?: string;
 }
+
+/* ---------- CV (rendered + printable) ---------- */
+export interface CvContact {
+	phone?: string;
+	email?: string;
+	website?: string;
+	websiteUrl?: string;
+}
+
+export interface CvReference {
+	name: string;
+	title?: string;
+	link?: string;
+}
+
+export interface CvRole {
+	title: string;
+	date?: string;
+	bullets?: string[];
+}
+
+export interface CvCompany {
+	company: string;
+	tenure?: string;
+	roles: CvRole[];
+}
+
+export interface CvEducation {
+	period?: string;
+	degree: string;
+	qualifier?: string;
+	institution?: string;
+}
+
+export interface Cv {
+	header: {
+		name: string;
+		title?: string;
+		contact?: CvContact;
+	};
+	profile?: string[];
+	references?: CvReference[];
+	experience?: CvCompany[];
+	education?: CvEducation[];
+}

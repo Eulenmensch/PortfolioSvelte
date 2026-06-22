@@ -56,3 +56,36 @@ button {
 a {
 	color: inherit;
 }
+
+/* ============================================================
+   Print — only the resume route prints, and it prints just the
+   CV sheet on a clean A4 page. The `cv-route` class is toggled
+   on <body> by src/routes/resume/+page.svelte.
+   ============================================================ */
+@media print {
+	@page {
+		size: A4;
+		margin: 14mm 16mm;
+	}
+
+	body.cv-route {
+		background: #fff;
+		color: #1a1a1a;
+		min-height: 0;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	/* Hide all site chrome; the resume page's own print rules keep
+	   the CV sheet visible. */
+	body.cv-route header#header,
+	body.cv-route footer,
+	body.cv-route .wrap {
+		display: none !important;
+	}
+
+	body.cv-route main {
+		overflow: visible;
+		min-height: 0;
+	}
+}

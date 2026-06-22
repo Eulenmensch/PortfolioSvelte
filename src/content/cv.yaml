@@ -1,0 +1,83 @@
+# =============================================================
+#  CV / Resumé content — EDIT THIS FILE ONLY.
+#
+#  This is the single source of truth for both the on-site CV
+#  (resume page) and the downloadable PDF. Never edit HTML.
+#
+#  - Bullet / prose text supports inline Markdown (**bold**, _italic_,
+#    [links](https://…)).
+#  - Dates, ordering and structure are just data — reorder or add
+#    items freely and the document reflows automatically.
+# =============================================================
+
+header:
+  name: Yoshua Woo
+  title: Game Designer
+  contact:
+    phone: "+49 1575 4381194"
+    email: yoshua.woo@gmail.com
+    website: yoshuawoo.com
+    websiteUrl: https://yoshuawoo.com
+
+# Two-column bulleted highlights at the top.
+profile:
+  - ">3 years of professional experience"
+  - Focus on Systems, 3Cs and Physics
+  - Turn-Based Tactics (Systems, Encounters)
+  - Skilled in Unity and Unreal
+  - MMORPG Feature Design (Systems, Economy)
+  - Bachelor's degree in Game Design
+
+references:
+  - name: Guido Schmidt
+    title: Director of Design at Rovio Entertainment Ltd.
+    link: https://www.linkedin.com/in/narkerns/
+  - name: Ralf C. Adam
+    title: Founder of TigerTeam Productions
+    link: https://www.linkedin.com/in/raadam/
+
+# Each company groups one or more roles (e.g. a promotion).
+experience:
+  - company: Sandbox Interactive GmbH
+    tenure: Since June 2024
+    roles:
+      - title: Game Designer
+        # TODO: set the real promotion month
+        date: Since May 2026
+        bullets:
+          - Part of the team responsible for new updates, taking ownership of new features from preproduction until after release.
+
+      - title: Junior Game Designer
+        date: June 2024 to May 2026 # TODO: set the real end month
+        bullets:
+          - Led the rework of "Learning Points", a premium currency used to enhance character progression. The changes lowered the player-facing complexity and allowed new players to use the system without having to consult forums or a wiki.
+          - Owned the design and implementation of the central feature for the "Horizons" update, bringing players back into the open world by adding rewarding mob encounter camps that change location daily.
+          - Conducted in-depth research and analysis of Albion Online's economy to inform future balancing changes and enhance the game's overall stability and player engagement.
+          - Collaborated closely with cross-disciplinary teams to ensure the seamless integration of new features and maintain the game's high-quality standards.
+
+  - company: Suspicious Games GmbH
+    tenure: February 2023 to March 2024
+    roles:
+      - title: Game Designer
+        date: February 2023 to March 2024
+        bullets:
+          - Took ownership of the design direction for a turn-based tactics game as the sole designer of a small team, bringing cohesion and clarity to the initial vision.
+          - Developed and iterated on multiple prototypes to test various game features, enhancing gameplay mechanics and user experience.
+          - Successfully identified and verified a compelling core loop for the game through rapid prototyping and playtesting.
+          - Designed and developed an expansion for the mobile app version of the board game Andor, from conceptualization to publication, enhancing the game's content and replay value.
+
+  - company: KING Art GmbH
+    tenure: September 2019 to February 2020
+    roles:
+      - title: Game Design Intern
+        date: September 2019 to February 2020
+        bullets:
+          - Iterated on an existing combat prototype until it was approved by the game director for inclusion in the MVP.
+          - Participated in playtesting sessions to evaluate and validate game mechanics, gaining firsthand experience in identifying enjoyable core loops.
+          - Utilized problem-solving skills and attention to detail to conceptualize and design the UI and UX flow for combat encounters, ensuring a seamless and intuitive player experience.
+
+education:
+  - period: 2017 to 2021
+    degree: Game Design
+    qualifier: B.A.
+    institution: University of Applied Sciences HTW Berlin

@@ -1,18 +1,21 @@
 <script lang="ts">
-	import { resume } from '$lib/content';
-	import EmbedFacade from '$lib/components/EmbedFacade.svelte';
-
-	const base = resume.link?.replace(/\/+$/, '') ?? null;
-	const previewSrc = base ? `${base}/preview` : null;
-	const viewHref = base ? `${base}/view` : null;
+	import Cv from '$lib/components/Cv.svelte';
 
 	$effect(() => {
 		const prev = document.body.style.backgroundColor;
 		document.body.style.backgroundColor = 'hsl(218, 91%, 10%)';
+		// Flag the route so the global print stylesheet hides site chrome
+		// and prints only the CV sheet.
+		document.body.classList.add('cv-route');
 		return () => {
 			document.body.style.backgroundColor = prev;
+			document.body.classList.remove('cv-route');
 		};
 	});
+
+	function downloadPdf() {
+		window.print();
+	}
 </script>
 
 <svelte:head>
@@ -23,16 +26,11 @@
 <main class="resume">
 	<h1>Resumé</h1>
 
-	{#if previewSrc}
-		<div class="embed">
-			<EmbedFacade src={previewSrc} title="Resumé" provider="Google Drive" />
-		</div>
-		<a class="view" href={viewHref} target="_blank" rel="noopener noreferrer">
-			Open in Google Drive ↗
-		</a>
-	{:else}
-		<p>Resumé is currently unavailable.</p>
-	{/if}
+	<div class="cv-frame">
+		<Cv />
+	</div>
+
+	<button class="download" onclick={downloadPdf}>Download PDF ↓</button>
 </main>
 
 <style>
@@ -51,16 +49,14 @@
 		text-shadow: 0.2rem 0.2rem var(--queen-blue);
 	}
 
-	.embed {
+	/* The CV renders in the site theme on screen, so it blends into the
+	   page — no white-card framing. (Print flips it to a B/W A4 sheet.) */
+	.cv-frame {
 		width: 100%;
 		max-width: 80rem;
-		aspect-ratio: 1 / 1.4142;
-		border-radius: var(--border-radius);
-		overflow: hidden;
-		box-shadow: var(--box-shadow);
 	}
 
-	.view {
+	.download {
 		margin-top: 2rem;
 		padding: 0.8rem 2rem;
 		border: 0.3rem solid var(--mango-yellow);
@@ -68,12 +64,12 @@
 		color: var(--mango-yellow);
 		font-weight: 900;
 		font-size: 1.4rem;
-		text-decoration: none;
+		cursor: pointer;
 		transition:
 			background-color 250ms,
 			color 250ms;
 	}
-	.view:hover {
+	.download:hover {
 		background-color: var(--mango-yellow);
 		color: black;
 	}
@@ -81,6 +77,25 @@
 	@media (min-width: 1024px) {
 		h1 {
 			margin: 5rem 0;
+		}
+	}
+
+	/* Hide the dark-page chrome around the CV when printing. */
+	@media print {
+		.resume {
+			min-height: 0;
+			padding: 0;
+			background: none;
+		}
+		.resume h1,
+		.download {
+			display: none;
+		}
+		.cv-frame {
+			max-width: none;
+			border-radius: 0;
+			overflow: visible;
+			box-shadow: none;
 		}
 	}
 </style>

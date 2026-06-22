@@ -1,11 +1,13 @@
 import homeData from '$content/home.yaml';
 import aboutData from '$content/about.yaml';
 import resumeData from '$content/resume.yaml';
-import type { Home, About, Resume, Project } from './types';
+import cvData from '$content/cv.yaml';
+import type { Home, About, Resume, Cv, Project } from './types';
 
 export const home = homeData as Home;
 export const about = aboutData as About;
 export const resume = resumeData as Resume;
+export const cv = cvData as Cv;
 
 // Eagerly load every project YAML and key it by uid.
 const projectModules = import.meta.glob<Project>('../../content/projects/*.yaml', {
@@ -21,4 +23,4 @@ for (const mod of Object.values(projectModules)) {
 /** All project uids in the order they appear on the home page. */
 export const projectOrder: string[] = home.projects.map((p) => p.uid);
 
-export type { Home, About, Resume, Project } from './types';
+export type { Home, About, Resume, Cv, Project } from './types';
