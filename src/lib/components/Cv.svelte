@@ -121,7 +121,7 @@
     --cv-bg: transparent;
     --cv-font-body: "Inter Variable", "Segoe UI", "Helvetica Neue", Arial,
       sans-serif;
-    --cv-font-heading: "Barlow", "Times New Roman", serif;
+    --cv-font-heading: "Barlow", "Helvetica Neue", Arial, sans-serif;
 
     box-sizing: border-box;
     width: 100%;
